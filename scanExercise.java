@@ -5,10 +5,15 @@ public class scanExercise {
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("escribe tu nombre");
-        
-        String nombre = scanner.nextLine();
 
+        String nombre = scanner.nextLine();
+        
+        System.out.println("escribe tu edad");
+        int edad = scanner.nextInt();
+        
         System.out.println("hola " + nombre);
-        scanner.close();
+        System.out.println("Tienes " + edad);
+        
+        
     }
 }

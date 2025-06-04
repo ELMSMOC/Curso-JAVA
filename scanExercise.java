@@ -14,6 +14,6 @@ public class scanExercise {
         System.out.println("hola " + nombre);
         System.out.println("Tienes " + edad);
         
-        
+        scanner.close();
     }
 }

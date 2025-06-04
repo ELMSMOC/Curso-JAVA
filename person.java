@@ -5,7 +5,14 @@ public class person {
         double weight = 58.234234;
         String name = "Pepe";
 
-        System.out.println(name + " que tiene " + edad + "y una altura de " + altura + "con peso de" + weight);
+        System.out.println("Name" + name);
+        System.out.println(""" 
+            "Edad" %s
+            "altura de" %s
+            "con peso de" %s
+            "Nombre" %s
+                
+                """.formatted(edad, altura, weight, name));
 
     }
 

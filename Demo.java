@@ -1,7 +1,6 @@
 public class Demo {
     public static void main(String[] args) {
             //comentario
-            String greetings = "hola bkbgkjb";
             int num1 = 5;
             int num2 = 3;
             System.out.println("-------");

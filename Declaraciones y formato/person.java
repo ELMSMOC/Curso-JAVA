@@ -1,7 +1,7 @@
 public class person {
     public static void main(String[] args){
-        byte edad = 22;
-        float altura = 1.78f;
+        byte age = 22;
+        float height = 1.78f;
         double weight = 58.234234;
         String name = "Pepe";
 
@@ -12,7 +12,7 @@ public class person {
             "con peso de" %s
             "Nombre" %s
                 
-                """.formatted(edad, altura, weight, name));
+                """.formatted(age, height, weight, name));
 
     }
 

@@ -6,13 +6,13 @@ public class scanExercise {
         
         System.out.println("escribe tu nombre");
 
-        String nombre = scanner.nextLine();
+        String name = scanner.nextLine();
         
         System.out.println("escribe tu edad");
-        int edad = scanner.nextInt();
+        int age = scanner.nextInt();
         
-        System.out.println("hola " + nombre);
-        System.out.println("Tienes " + edad);
+        System.out.println("hola " + name);
+        System.out.println("Tienes " + age);
         
         scanner.close();
     }

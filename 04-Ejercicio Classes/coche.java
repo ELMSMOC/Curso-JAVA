@@ -1,5 +1,5 @@
 
-public class Main {
+public class coche {
     public static void main(String[] args) {
         Car car1 = new Car(4, "Red", 5, "Seat", 'D', true);
         Car car2 = new Car(3, "Yellow", 3, "Mercedes", 'S', false);

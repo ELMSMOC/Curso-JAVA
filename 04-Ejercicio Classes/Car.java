@@ -14,4 +14,16 @@ public class Car {
         this.type = type;
         this.isAuto= isAuto;
     }
+
+    void showInfo(){
+        String message = """
+            Numero de asientos %s
+            Color %s
+            Numero de puertas %s
+            Marca %s
+            Es automatico? %s
+            Tipo %s
+                    """;
+            System.out.println(message.formatted(seatsNum, color, doorCount, brand, type, isAuto));
+    }
 }

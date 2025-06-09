@@ -1,8 +1,9 @@
-public funciones {
-    // void add(){}
+public class funciones {
+    static void add(){
+        System.out.println("Soy una funcion");
+    }
     
     public static void main(String[] args){
-        System.out.println("Soy una funcion")
-        
+      add();  
     }
 }

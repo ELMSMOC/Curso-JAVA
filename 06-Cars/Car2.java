@@ -1,4 +1,8 @@
 public class Car2 {
+    
+    static private int numCars = 0;
+    private int id;
+
     private int seatsNum;
     private String color;
     private int doorCount;
@@ -6,8 +10,6 @@ public class Car2 {
     private char type;
     private boolean isAuto;
     
-    static private int numCars = 0;
-    static int id;
 
     Car2(
         int seatsNum,

@@ -2,11 +2,14 @@ public class funciones {
 
     /* Funcion: codigo ejecutable
       */
-    static void add(int num1, int num2){
-        System.out.println(num1 + num2);
+    static int add(int num1, int num2){
+        int result = num1 + num2;
+        System.out.println("El resultado es " + result);
+        return result;
     }
     
     public static void main(String[] args){
-      add(5, 7);  
+      int firstResult = add(5, 7); 
+      add(firstResult, 98_600); 
     }
 }

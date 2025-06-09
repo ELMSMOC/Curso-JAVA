@@ -1,9 +1,12 @@
 public class funciones {
-    static void add(){
-        System.out.println("Soy una funcion");
+
+    /* Funcion: codigo ejecutable
+      */
+    static void add(int num1, int num2){
+        System.out.println(num1 + num2);
     }
     
     public static void main(String[] args){
-      add();  
+      add(5, 7);  
     }
 }

@@ -1,4 +1,4 @@
-public class funciones {
+public class funcionesSum {
 
     /* Funcion: codigo ejecutable
       */

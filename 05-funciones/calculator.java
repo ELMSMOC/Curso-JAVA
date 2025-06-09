@@ -1,41 +1,56 @@
 import java.util.Scanner;
 
-public class calculator {
-
-    static int multiplicacion(int num1, int num2){
-        int resultado = num1 * num2;
-        return resultado;
+public class Calculator {
+    static int add(int num1, int num2){
+        int result = num1 + num2;
+        return result;
+    } 
+    
+    static int sustract(int num1, int num2){
+        int result = num1 - num2;
+        return result;
+    }
+    
+    static int multiply(int num1, int num2){
+        int result = num1 * num2;
+        return result;
     }
 
-     static int division(int num1, int num2){
-        int resultado = num1 / num2;
-        return resultado;
-    } 
-
-    static int suma(int num1, int num2){
-        int resultado = num1 + num2;
-        return resultado;
-    } 
-
-    static int resta(int num1, int num2){
-        int resultado = num1 - num2;
-        return resultado;
+     static int divide(int num1, int num2){
+        int result = num1 / num2;
+        return result;
     }
 
-    static void showResult(string operation, int resultado){
-        System.out.println("La resultado de la %s es %s", operation, resultado );
+    static int restDivision (int num1,int num2) {
+        int result = num1 % num2;
+        return result;
+    }
+
+
+
+    static void showResult(string operation, int result){
+        System.out.println("La resultado de la %s es %s", operation, result );
+        System.out.println("");
     }
 
     static int getInteger (String message){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Añade un numero");
-        int num1 = scanner.nextInt();
-        System.out.println("Añade otro numero");
-        int num2 = scanner.nextInt();
-    
-        scanner.close();
-
+        System.out.println(message);
+        int num = scanner.nextInt();
+         scanner.close();
+        return num;
+        
     }
     public static void main(String[] args){
+        int num1 = getInteger("Dame un int");
+        int num2 = getInteger("Dame otro int");
+
+
+        System.out.printf("Operaciones con %s y %s\n", num1, num2);
+        showResult("suma", add(num1, num2));
+        showResult("resta", sustract(num1,num2));
+        showResult("producto", multiply(num1, num2));
+        showResult("división", divide(num1, num2));
+        showResult("resto", restDivision(num1, num2));
     }
 }

@@ -10,7 +10,7 @@ public class Calculator {
         int result = num1 - num2;
         return result;
     }
-    
+
     static int multiply(int num1, int num2){
         int result = num1 * num2;
         return result;
@@ -28,8 +28,8 @@ public class Calculator {
 
 
 
-    static void showResult(string operation, int result){
-        System.out.println("La resultado de la %s es %s", operation, result );
+    static void showResult(String operation, int result){
+        System.out.printf("La resultado de la %s es %s", operation, result );
         System.out.println("");
     }
 
@@ -37,7 +37,7 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
         int num = scanner.nextInt();
-         scanner.close();
+        // scanner.close();
         return num;
         
     }

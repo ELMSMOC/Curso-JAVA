@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class calculator {
+public class Calculator {
     static int add(int num1, int num2){
         int result = num1 + num2;
         return result;
@@ -29,7 +29,7 @@ public class calculator {
 
 
     static void showResult(String operation, int result){
-        System.out.printf("La resultado de la %s es %s", operation, result );
+        System.out.printf("El resultado de la %s es %s", operation, result );
         System.out.println("");
     }
 

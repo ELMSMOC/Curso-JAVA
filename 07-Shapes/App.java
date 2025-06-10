@@ -6,5 +6,8 @@ public class App {
 
     System.out.println(num1);
     System.out.println(num2);
+
+    int result = Calculator.multiply(num1, num2);
+    Calculator.showResult("Multiplicacion", result);
   } 
 }

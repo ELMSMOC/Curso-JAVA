@@ -57,6 +57,6 @@ public class Even {
     }
 
     public static void main(String[] args){
-        mode1(args);
+        mode4(args);
     }
 }

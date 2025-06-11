@@ -10,6 +10,8 @@ public class AgeGreet {
         scanner.close();
         return age;
     }
+
+    // variable age creada y se asigna el valor del elemento [0] del array
     static int ageByArgs (String[] args) {
         if (args.length == 0) {
             System.out.println("Tienes que añadir un entero en la línea de comandos");

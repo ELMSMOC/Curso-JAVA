@@ -19,19 +19,24 @@ public class school {
             "No hay clases para usted"            
         };
 
-        int index = 4;
+        // int index = 4;
         int age = scannerAge();
         
         
-        if (age <= 6) {
-            index = 0;
-        } else if (age <= 8) {
-            index = 1;
-        } else if (age <= 10) {
-            index = 2;
-        } else if (age <= 13) {
-            index = 3;
-        }
+        // if (age <= 6) {
+        //     index = 0;
+        // } else if (age <= 8) {
+        //     index = 1;
+        // } else if (age <= 10) {
+        //     index = 2;
+        // } else if (age <= 13) {
+        //     index = 3;
+        // }
+
+        int index = (age <= 6) ? 0 : 
+                    (age <= 8) ? 1 : 
+                    (age <= 10) ? 2 : 
+                    (age <= 13) ? 3 : 4;
 
         System.out.println(messages[index]);
 

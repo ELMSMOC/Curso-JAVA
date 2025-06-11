@@ -12,7 +12,7 @@ public class Operators2 {
     }
     
     public static void main(String[] args){
-        int number = 22;
+        int number = 20;
         // number =  number + 3;
         number += 3;
         System.out.println(number++);
@@ -20,7 +20,7 @@ public class Operators2 {
         System.out.println(++number);
         
         String job = "Developer";
-        int age = 58;
+        int age = 20;
 
         if (job == "Developer" && checkAge(age) ) {
             System.out.println("Bienvenido a la Hackaton juvenil");

@@ -14,8 +14,8 @@ public class Multiply {
             }
         }
 
-    static void calculateAllTable (){
-            for (int i = 1; i <= COUNTER_NUM; i++) {
+    static void calculateAllTable (int num){
+            for (int i = 1; i <= num; i++) {
                     calculateTable(i);
                 }
     }
@@ -24,11 +24,11 @@ public class Multiply {
         Scanner scanner2 = new Scanner(System.in);
         System.out.println("Quieres todas las tablas? Si o No?");
         String oneOrAll = scanner2.nextLine();
-        if (oneOrAll == "Si"){
+        if (oneOrAll.equalsIgnoreCase("Si")){
+            System.out.println("Muerete");
            for (int i = 1; i <= COUNTER_NUM; i++) {
-
+                calculateAllTable(COUNTER_NUM);
            }
-
         } else {
             Scanner scanner1 = new Scanner(System.in);
             System.out.println("Introduce un numero para tu tabla");
@@ -37,8 +37,8 @@ public class Multiply {
             calculateTable(numberInput);
             
             scanner1.close();
-            scanner2.close();
         }   
+        scanner2.close();
     }
 
     public static void main(String[] args) {

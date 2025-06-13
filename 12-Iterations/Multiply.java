@@ -4,32 +4,41 @@ public class Multiply {
 
     static final int COUNTER_NUM = 10;
 
+    static void calculateTable (int num){
+            System.out.println("La tabla del " + num);
+
+            for (int i = 1; i <= COUNTER_NUM; i++) {
+                System.out.println("""
+                    %s x %s = %s
+                    """.formatted( num, i, num*i));
+            }
+        }
+
+    static void calculateAllTable (){
+            for (int i = 1; i <= COUNTER_NUM; i++) {
+                    calculateTable(i);
+                }
+    }
+
     public static void multiplicar (){
         Scanner scanner2 = new Scanner(System.in);
         System.out.println("Quieres todas las tablas? Si o No?");
         String oneOrAll = scanner2.nextLine();
         if (oneOrAll == "Si"){
-           System.out.println(); 
-        } 
-        Scanner scanner1 = new Scanner(System.in);
-        System.out.println("Introduce un numero para tu tabla");
-        int numberInput = scanner1.nextInt();
-        
-        scanner1.close();
-        scanner2.close();
+           for (int i = 1; i <= COUNTER_NUM; i++) {
 
-        for (int i = 1; i <= COUNTER_NUM; i++) {
-
-                System.out.printf(*** ***,);
-            }
-        
-        if (oneOrAll == "Si") {
+           }
 
         } else {
+            Scanner scanner1 = new Scanner(System.in);
+            System.out.println("Introduce un numero para tu tabla");
+            int numberInput = scanner1.nextInt();
+
+            calculateTable(numberInput);
             
-        }
-        
-        
+            scanner1.close();
+            scanner2.close();
+        }   
     }
 
     public static void main(String[] args) {

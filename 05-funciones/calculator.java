@@ -37,7 +37,7 @@ public class calculator {
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
         int num = scanner.nextInt();
-        // scanner.close();
+        // scanner.close(); No se cierra, no deberia para cada vez que se llame al metodo
         return num;
         
     }

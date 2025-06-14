@@ -10,12 +10,20 @@ public class PrimeNumbers {
         return numberInput;
     }
 
-    static boolean isPrime(int numberInput){
-        for (int i = 1; i < (numberInput - 1); i++){
-            numberInput % i == 0 ? return false : return true;
+    static boolean isPrime(int num){
+        for (int i = 2; i < (num - 1); i++){
+            if (num % i != 0){
+                return true;
+            }
         }
+        
+        return false;
     }
+
     public static void main(String[] args) {
-        isPrime(3);
+        int numPrimus = getDataByScanner();
+        boolean resultado = isPrime(numPrimus);
+        System.out.println(resultado);
+        System.out.println("Es primo?" + resultado);
     }
 }

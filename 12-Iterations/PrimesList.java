@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrimesList {
 
-    static int scanNum(){
+    static int getScanNum(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Dame un numero por favor y te paso todos los primos");
         int num = scanner.nextInt();
@@ -10,16 +12,26 @@ public class PrimesList {
         return num;
     }
 
-    static int catchPrimes(){
-        int num = scanNum();
-        System.out.println("esto es" + num);
-        for (int index = 2; index < num.length-1 ; index++) {
-            // int[] items = num % i == 0 ? i = items[i]:;
+    private static void showPrime (int num){
+        for (int i = 0; i < num; i++) {
+            if (PrimeNumbers.isPrime(i)){
+                System.out.println("El " + i);
+            }
         }
-        return items[];
     }
+
+     static List<Integer> catchPrimes(int numberInput){
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (int index = 2; index < numberInput; index++) {
+            if (PrimeNumbers.isPrime(index)){
+                numbers.add(index);
+            }
+            return numbers;
+        }
+    }
+
     public static void main(String[] args) {
-        catchPrimes();
-        
+        int numberInput = getScanNum();
+        catchPrimes(numberInput);
     }
 }

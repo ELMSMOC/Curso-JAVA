@@ -2,44 +2,41 @@ import java.util.Scanner;
 
 public class WeekTranslator {
 
-
-    static String getDayByScanner() {
+    static String getWeekDay(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Dime un día de la semana en español");
-        String day = scanner.nextLine();
-        System.out.println("");
+        System.out.println("Dime un dia de la semana y lo traduzco al ingles");
+        String inputDay = scanner.nextLine();
         scanner.close();
-        return day;
+        return inputDay;
     }
-    public static void main(String[] args) {
-        String day = getDayByScanner();
 
+    public static void main(String[] args) {
+        String day = getWeekDay();
         switch (day.toLowerCase()) {
-            case "lunes":
-                System.out.println("hétfő");
+            case "Lunes":
+                System.out.println("Monday");
                 break;
-            case "martes":
-                System.out.println("kedd");
+            case "Martes":
+                System.out.println("Tuesday");
                 break;
-            case "miercoles":    
-            case "miércoles":
-                System.out.println("szerda");
+            case "Miercoles":
+                System.out.println("Wednesday");
                 break;
-            case "jueves":
-                System.out.println("csütörtök");
+            case "Jueves":
+                System.out.println("Thursday");
                 break;
-            case "viernes":
-                System.out.println("péntek");
+            case "Friday":
+                System.out.println("Viernes");
                 break;
-            case "sabado":
-            case "sábado":
-                System.out.println("szombat");
+            case "Sabado":
+                System.out.println("Saturday");
                 break;
-            case "domingo":
-                System.out.println("vasárnap");
+            case "Domingo":
+                System.out.println("Sunday");
                 break;
+        
             default:
-                System.out.println("No es un día en español");
+                System.out.println("No se que me dices");
                 break;
         }
     }

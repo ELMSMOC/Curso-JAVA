@@ -20,18 +20,21 @@ public class PrimesList {
         }
     }
 
-     static List<Integer> catchPrimes(int numberInput){
+    private static List<Integer> catchPrimes(int numberInput){
         ArrayList<Integer> numbers = new ArrayList<>();
         for (int index = 2; index < numberInput; index++) {
             if (PrimeNumbers.isPrime(index)){
                 numbers.add(index);
             }
-            return numbers;
         }
+        return numbers;
     }
 
     public static void main(String[] args) {
         int numberInput = getScanNum();
-        catchPrimes(numberInput);
+        List<Integer> numbers = catchPrimes(numberInput);
+        for (int number : numbers) {
+            System.out.println("El " + number);
+        }
     }
 }

@@ -11,27 +11,30 @@ public class WeekTranslator {
     }
 
     public static void main(String[] args) {
-        String day = getWeekDay();
-        switch (day.toLowerCase()) {
-            case "Lunes":
+        String inputDay = getWeekDay();
+
+        switch (inputDay.toLowerCase()) {
+            case "lunes":
                 System.out.println("Monday");
                 break;
-            case "Martes":
+            case "martes":
                 System.out.println("Tuesday");
                 break;
-            case "Miercoles":
+            case "miércoles":
+            case "miercoles":
                 System.out.println("Wednesday");
                 break;
-            case "Jueves":
+            case "jueves":
                 System.out.println("Thursday");
                 break;
-            case "Friday":
-                System.out.println("Viernes");
+            case "viernes":
+                System.out.println("Friday");
                 break;
-            case "Sabado":
+            case "sábado":
+            case "sabado":
                 System.out.println("Saturday");
                 break;
-            case "Domingo":
+            case "domingo":
                 System.out.println("Sunday");
                 break;
         

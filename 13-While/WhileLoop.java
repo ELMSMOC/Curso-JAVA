@@ -52,15 +52,15 @@ public class WhileLoop {
         boolean sentinel = true;
         int counter = 0;
         
-        for (int i = 0; number != 7; i++) {
+        while (sentinel) {
             counter++;
             Random randomCreator = new Random();
             int number = randomCreator.nextInt(9);
-
             if (number % 2 == 0){
                 continue;
             }
-            System.err.printf("Numnero %s = %s", i, number);
+            System.err.printf("Numnero %s = %s", counter, number);
+            System.out.println("");
             if (number == 7){
                 break;
             }

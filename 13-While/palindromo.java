@@ -1,17 +1,22 @@
 public class palindromo {
 
-    static String removeSpaces(String value){
-        String result = "";
-        for (int i = 0; i < value.length(); i++) {
-            result = value.charAt(i) + result; 
-        }
+    public static boolean isPalindrome (String text){
+        String initialText = text.toLowerCase();
+        String noSpacesText = manageStrings.removeSpaces(initialText);
+        String reverseText = manageStrings.reverseString(noSpacesText);
+        return noSpacesText.equals(reverseText);
+    }
 
-        return result;
+    static void showPalindrome(String text){
+        String message = isPalindrome(text)
+        ? "Es palindromo"
+        : "No es palindromo";
+        message = "\"" + text + "\"" + message;
+        System.out.println(message);
     }
 
     public static void main(String[] args) {
-        String message = "Luz azul";
-        removeSpaces(message);
-        System.out.println(message);
+        String goodString = "Luz azul";
+        showPalindrome(goodString);
     }
 }

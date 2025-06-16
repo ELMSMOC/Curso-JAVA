@@ -36,12 +36,11 @@ public class manageStrings {
     static String removeSpaces(String value){
         String result = "";
         for (int i = 0; i < value.length(); i++) {
-            if (value.charAt(i) != ' '){
+            if (value.charAt(i) == ' '){
                 continue;
             }
             result += value.charAt(i);
          }
-
         return result;
     }
 

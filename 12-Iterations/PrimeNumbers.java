@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class PrimeNumbers {
 
-    static int getDataByScanner (){
+    static int getDataByScanner (String message){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Dame un numero y te digo si es primo");
+        String text = message;
+        System.out.println(text);
         int numberInput = scanner.nextInt();
         scanner.close();
         return numberInput;
@@ -16,14 +17,17 @@ public class PrimeNumbers {
                 return true;
             }
         }
-        
         return false;
     }
 
-    public static void main(String[] args) {
-        int numPrimus = getDataByScanner();
-        boolean resultado = isPrime(numPrimus);
-        System.out.println(resultado);
+    static void writeResult(int num){
+        String resultado = isPrime(num) ? "Si es primo" : "No lo es";
         System.out.println("Es primo?" + resultado);
+    }
+
+    public static void main(String[] args) {
+        int numPrimus = getDataByScanner("Dime un numero y te digo si es primo");
+        writeResult(numPrimus);
+        // writeResult(getDataByScanner());
     }
 }

@@ -37,8 +37,8 @@ public class school {
         int message = 
         (age < 7) ? index = 0:
         (age < 9) ? index= 1:
-        (age < 7) ? index = 2:
-        (age < 9) ? index= 3:4;
+        (age < 11) ? index = 2:
+        (age < 14) ? index= 3:4;
 
         System.out.println(messages[message]);
     } 

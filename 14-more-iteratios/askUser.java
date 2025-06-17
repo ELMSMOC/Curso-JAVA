@@ -35,7 +35,27 @@ public class askUser {
         scanner.close();
         System.out.println("Que te den");
     }
+
+    static void ask2(){
+    Scanner scanner = new Scanner(System.in);
+    String answer = "S";
+
+        while( !answer.toLowerCase().equals("n") &&
+                ! answer.toLowerCase().equals("no")){
+
+                
+            System.out.println("¿Quieres continuar (S/N)?");
+            answer = scanner.nextLine();
+                }
+            
+            
+        
+    scanner.close();
+    System.out.println("Gracias por todo");
+
+
+    }
     public static void main(String[] args) {
-        askUser2();
+        ask2();
     }
 }

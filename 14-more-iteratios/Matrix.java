@@ -18,6 +18,13 @@ public class Matrix {
     }
 
     static void matrix(){
+
+        String[][] matrixNames = {
+            {"Javier", "Eugenio", "Pedro"},
+            {"Perez", "Lazaro", "Ramirez"},
+            {"Ruiz", "Martinez", "Casares"}
+        };
+
         int[][] matrixNumbers= new int[3][3];
 
         matrixNumbers[0][0] = 22;
@@ -34,13 +41,21 @@ public class Matrix {
 
         for (int i = 0; i < matrixNumbers.length; i++) {
             for (int j = 0; j < matrixNumbers[0].length; j++) {
-                System.out.println(matrixNumbers[i][j]);
+                System.out.print(matrixNumbers[i][j] + " ");
             }
+            System.out.println("");
+        }
+
+        for (int[] row : matrixNumbers) {
+            for (int item: row) {
+                System.out.print(item + " ");
+            }
+            System.out.println("");
         }
     }
     
     public static void main(String[] args) {
-        vector();
+        // vector();
         matrix();
     }
 }

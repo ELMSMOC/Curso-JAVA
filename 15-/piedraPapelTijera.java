@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class piedraPapelTijera {
 
-    static int chooseItem (){
+    private static int chooseItem (){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Elige entre papel, piedra o tijera");
         String choosenOne = scanner.nextLine();
@@ -19,7 +19,7 @@ public class piedraPapelTijera {
         return userCoordenate;
     }
 
-    static void calcCoordenates (){
+    private static void calcCoordenates (){
         Random r = new Random();
         int cpuChoose = r.nextInt(3);
         int userChoose = chooseItem();
@@ -36,6 +36,8 @@ public class piedraPapelTijera {
     }
     
     public static void main(String[] args){
-        calcCoordenates(); 
+
+            calcCoordenates();
+
     }
 }

@@ -14,11 +14,14 @@ public class statistic {
     }
 
     static double average (int... args){
-        return averageArray(newarray);
+        return averageArray(args);
     }
 
-    public static void main(String args){
+    public static void main(String[] args){
         int[] newarray = {3,566,3456,34,35};
-        averageArray(newarray);
+        int sum = itemsSum(newarray);
+        double avg = averageArray(newarray);
+        System.out.println("Suma: " + sum);
+        System.out.println("Media: " + avg);
     }
 }

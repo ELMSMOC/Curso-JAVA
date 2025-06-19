@@ -43,18 +43,31 @@ public class testAhorcado {
         return letter;
     }
 
-    // static private void wordComparation(String word){
+    static private boolean wordComparation(String letter, String word){
+        String out = "";
+        for (int j = 0; j < word.length(); j++) {
+            String let = word.charAt(j);
+            if (let.equals(letter)){
+            System.out.println("Acertaste!" + letter);
+                return true;
+                break;
+            }
+        }
+
+        return false;
         
-    // }
+    }
     
     
     public static void main(String[] args) {
         String letter = getLetter();
+        String word = wordGenerator();
         while (letter.length() != 1){
         System.out.println(letter.length());
             System.out.println("Solo una letra por favor");
             letter=getLetter();
         };
-        printHyphens(wordGenerator());
+        printHyphens(word);
+        System.out.println(wordComparation(letter, word));
     }
 }

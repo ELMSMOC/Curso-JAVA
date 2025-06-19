@@ -13,11 +13,7 @@ public class Character {
         this.role = role;
         this.isZombie = isZombie;
 
-        System.out.printf("Nombre: %s\n
-        Especie: %s\n
-        Vida: %s\n
-        Rol: %s\n
-        Es zombie? %s", name, specie, life, role, isZombie);
+        System.out.printf("Nombre: %s\nEspecie: %c\nVida: %d\nRol: %s\nEs zombie? %b\n", name, specie, life, role, isZombie);
     }
     
 

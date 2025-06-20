@@ -1,7 +1,21 @@
 import base.Person;
 import game.Character;
+import game.Role;
+import game.Species;
 
 public class App {
+
+    public static void prepareGame(){
+        Character charac1 = new Character( "Benito", Species.ELFO, 20, Role.CABALLERO, true);
+        charac1.printCharacter();
+        Character charac2 = new Character( "Benito", Species.TRASGO, 80, Role.HECHICERO, true);
+        charac2.printCharacter();
+        Character.showList();
+
+        charac2.renameInvalidCharacters("Manolo");
+        charac2.printCharacter();
+        Character.showList();
+    }
     public static void main(String[] args) {
         // Person person1 = new Person("Jose", 22);
         // Person.counter++;
@@ -19,6 +33,6 @@ public class App {
 
         // System.out.println(Person.counter);
 
-        Character charac1 = new Character("Benito", 'E', 20, "Archer", true);
+        prepareGame();
     }
 }

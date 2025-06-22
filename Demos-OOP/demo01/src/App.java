@@ -1,5 +1,8 @@
-import Countability.CustomData;
+import java.util.Scanner;
+
+import Countability.Data;
 import Countability.Invoice;
+import Countability.Product;
 import base.Person;
 import game.Character;
 import game.Role;
@@ -18,7 +21,25 @@ public class App {
     //     charac2.printCharacter();
     //     Character.showList();
     // }
+
+
+
+
+      static public void index (){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Que producto necesita?");
+        String answer = scanner.nextLine().toLowerCase();
+        if (answer.contains(answer)) {
+   
+        };
+    }
+
     public static void main(String[] args) {
+        // TESTING INVOICE
+        index();
+        // ------------------------------------
+
+
         // Person person1 = new Person("Jose", 22);
         // Person.counter++;
         // person1.age = 22;
@@ -37,6 +58,8 @@ public class App {
 
         // prepareGame();
 
-        CustomData obj1 = new CustomData("Quimica sl", "C/ Jacinto Benavente 24, 6ºB", "456s8vf", 678123123);
+        // CustomData client = new CustomData(false, "Eugenio Lazaro", "C/ General Ricardos 48", "13537648s", "6548789456");
+
+        
     }
 }

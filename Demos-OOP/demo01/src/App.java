@@ -25,14 +25,13 @@ public class App {
 
     public static void main(String[] args) {
         // TESTING INVOICE
-        // Product.prepareProductList();
-        // Product.printProductNameList();
-        // Product.getDataProduct();
-        // Data.prepareCustomerList();
-        // Data.printCustomerNameList();
-        // Data.askClient();
+        Product.prepareProductList();
+        Product.printProductNameList();
+        Product.getDataProduct();
+        Data.prepareCustomerList();
+        Data.printCustomerNameList();
         Data.showCompanyData();
-  
+        Data.showClientData();
         // ------------------------------------
 
 

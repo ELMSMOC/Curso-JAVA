@@ -5,14 +5,15 @@ import java.util.Scanner;
 
 public class Data {
     // Compañia/Cliente
-    private String name = "Quimica sl";
-    private String address = "C/ Jacinto Benavente 24, 6ºB";
-    private int tlf = 678123123;
-    private String nif= "456s8vf";
+    private String name;
+    private String address;
+    private int tlf;
+    private String nif;
 
     private static List<Data> customerList = new ArrayList<Data>();
 
     public static void prepareCustomerList(){
+        Data company = new Data("Quimica sl\"", "C/ Jacinto Benavente 24, 6ºB", 678123123, "456s8vf");
         Data cu1 = new Data("Joaquin", "Esquina Tomas 3, 4ºf", 951756456, "423423L");
         Data cu2 = new Data("Paul", "Calle aldara, 3", 984786459, "342535L3");
         Data cu3 = new Data("Rodri", "Avenida Luis XI", 95478445, "34335L3");
@@ -23,9 +24,13 @@ public class Data {
 
 
     public static void printCustomerNameList(){
+        int i=0;
         for (Data customer : customerList) {
-            String message ="Cl: " + customer.name;
+            if (i > 0){
+                String message ="Cl: " + customer.name;
                 System.out.println(message);
+            }
+            i++;
         }
     }
 
@@ -35,43 +40,50 @@ public class Data {
         String answer = scanner.nextLine();
         String name = answer.toLowerCase();
         int i = 0;
-            for (Data customer : customerList) {
-                if (customer.name.toLowerCase().contains(name)) {
-                    System.out.println("Has elegido a " + customer.name);
-                    return i;
-                }
-                i++;
+        for (Data customer : customerList) {
+            if (customer.name.toLowerCase().contains(name)) {
+                System.out.println("Has elegido a " + customer.name);
+                return i;
             }
-            return i;
+            i++;
+        }
+        return i;
     }
 
     public static void showCompanyData(){
         int i=0;
         String messageComp = """
-            Nombre de la companía; %s
-            Direccion: %s,
-            N.I.F.: %s,
+            Nombre de la companía: %s
+            Direccion: %s
+            N.I.F.: %s
             Teléfono: %s
                 """;
         for (Data customer : customerList) {
-            if(i>0){
+            if(i == 0){
                 System.out.println(messageComp.formatted(customer.name,customer.address,customer.nif,customer.tlf));
                 break;
             }
-
+            i++;
         }
     }
 
-    // public static void showClientData(){
+    public static void showClientData(){
+        int index = askClient();
+        String messageComp = """
+            Nombre del cliente; %s
+            Direccion: %s,
+            Teléfono: %s
+            D.N.I.: %s,
+                """;
+                int i = 0;
+        for (Data customer : customerList) {
+            if(i == index){
+                System.out.println(messageComp.formatted(customer.name,customer.address,customer.nif,customer.tlf));
+            }
+            i++;
+        }
         
-    //     String messageComp = """
-    //         Nombre del cliente; %s
-    //         Direccion: %s,
-    //         Teléfono: %s
-    //         D.N.I.: %s,
-    //             """;
-    //     System.out.println(messageComp.formatted(name,address,tlf,nif));
-    // }
+    }
      
 
     public Data(String name, String address, int tlf, String nif){
@@ -80,6 +92,5 @@ public class Data {
         this.tlf = tlf;
         this.nif = nif;
         customerList.add(this);
-        showCompanyData();
     }
 }

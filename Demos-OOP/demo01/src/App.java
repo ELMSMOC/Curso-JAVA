@@ -23,20 +23,16 @@ public class App {
     // }
 
 
-
-
-      static public void index (){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Que producto necesita?");
-        String answer = scanner.nextLine().toLowerCase();
-        if (answer.contains(answer)) {
-   
-        };
-    }
-
     public static void main(String[] args) {
         // TESTING INVOICE
-        index();
+        // Product.prepareProductList();
+        // Product.printProductNameList();
+        // Product.getDataProduct();
+        // Data.prepareCustomerList();
+        // Data.printCustomerNameList();
+        // Data.askClient();
+        Data.showCompanyData();
+  
         // ------------------------------------
 
 

@@ -1,3 +1,5 @@
+import base.Square;
+
 public class Equality {
 
     public static void primitives (){
@@ -52,6 +54,50 @@ public class Equality {
         // double num3 = 3.5;
         // System.out.println(num3*(result));
     }
+
+    public static void compareStrings (){
+        System.out.println("Strings and equality");
+        String str1 = "Hola mundo";
+        String str2 = new String("Hola mundo");
+        String str3 = "Hola mundo";
+        System.out.println(str1 == str2); //false 
+        System.out.println(str1.equals(str2)); //true
+        System.out.println(str1 == str3); //true
+        String str4 = str2;
+        System.out.println(str2 == str4); //true
+
+        str1.toString();
+        str1.charAt(2);
+
+        for (int i = 0; i < str1.length(); i++) {
+            System.out.println(str1.charAt(i));
+        }
+
+        for (char item : str1.toCharArray()) {
+            System.out.println(item);            
+        }
+
+        System.out.println("_________________________________________");
+        System.out.println(str1.charAt(4));
+       
+        System.out.println( str1.codePointAt(5)); // numero de codigo de la letra M(109)
+        str1.split(" "); // Separa las palabra de un string y devuelve un array con las palabras como elementos
+        str1.split(""); // devuelve un array con cada caracter como elemento del array
+    }
+
+    public static void compareObjects(){
+        System.out.println("Objexts and Equality");
+        Square sq1 = new Square(10);
+        Square sq2 = new Square(10);
+        Square sq3 = sq1;
+        System.out.println(sq1 == sq2); //false
+        System.out.println(sq1 == sq3); //true
+        System.out.println(sq1);
+        System.out.println(sq3);
+        System.out.println(sq2);
+        System.out.println(sq1.equals(sq2)); //false antes por que no estaba sobreescrito el metodo equals
+        System.out.println(sq1.equals(sq2)); //True debidoa que sobreescribimos el metodo equals en Square.java
+    }
   
     public static void main(String[] args) {
         System.out.println("Metodo contains, igualdad en Java");
@@ -60,5 +106,9 @@ public class Equality {
         wrappers();
         System.out.println("-------------------------------------");
         casting();
+        System.out.println("-------------------------------------");
+        compareStrings();
+        System.out.println("-------------------------------------");
+        compareObjects();
     }
 }

@@ -97,6 +97,11 @@ public class Equality {
         System.out.println(sq2);
         System.out.println(sq1.equals(sq2)); //false antes por que no estaba sobreescrito el metodo equals
         System.out.println(sq1.equals(sq2)); //True debidoa que sobreescribimos el metodo equals en Square.java
+
+
+        sq1.side = 12;
+        System.out.println(sq2.side);
+        System.out.println(sq3.side);
     }
   
     public static void main(String[] args) {

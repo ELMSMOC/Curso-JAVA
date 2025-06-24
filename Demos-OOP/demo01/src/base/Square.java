@@ -1,10 +1,15 @@
 package base;
 
 public class Square {
-    int side;
+    public int side;
 
     public Square(int side) {
         this.side = side;
+    }
+
+    // OVERLOAD del constructor
+    public Square(Square sq) {
+        this(sq.side);
     }
 
     @Override

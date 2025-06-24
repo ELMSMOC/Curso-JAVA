@@ -4,7 +4,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class Item {
-    
+
     static private final NumberFormat NF = NumberFormat.getCurrencyInstance(Locale.GERMANY);
 
 

@@ -1,7 +1,9 @@
 package CountabilityNew;
 
 public enum Payments {
-    Bizum,
-    Card,
-    Transfer
+    BIZUM('Bizum'),
+    CARD,
+    TRANSFER;
+
+    Object.
 }

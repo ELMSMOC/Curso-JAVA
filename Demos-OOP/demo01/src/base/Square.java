@@ -1,6 +1,6 @@
 package base;
 
-public class Square {
+public class Square implements Cloneable {
     public int side;
 
     public Square(int side) {
@@ -10,6 +10,11 @@ public class Square {
     // OVERLOAD del constructor
     public Square(Square sq) {
         this(sq.side);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException (){
+        return (Square) super.clone();
     }
 
     @Override

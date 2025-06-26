@@ -1,4 +1,4 @@
-package OopMarket;
+package Products;
 
 public class Drugstore extends Product{
 

@@ -8,13 +8,13 @@ import enums.ContainerType;
 public class Container implements IContainer{
 
     private String ref;
-    private int weigthAvailable;
+    private int resistance;
     private int volumen;
     private int surface;
     private ContainerType type; 
 
-    public Container(int weigthAvailable, int volumen, int size){
-        this.weigthAvailable = weigthAvailable;
+    public Container(int resistance, int volumen, int size){
+        this.resistance = resistance;
         this.volumen = volumen;
         this.surface = size;
     }

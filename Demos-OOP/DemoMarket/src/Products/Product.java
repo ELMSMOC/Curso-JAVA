@@ -9,9 +9,9 @@ public class Product implements IProduct {
     private int prize;
     private int vol;
     private int size;
-    private int count;
     private int weight;
     private Category category;
+    private int count;
 
 
     @Override
@@ -31,9 +31,12 @@ public class Product implements IProduct {
         return count;
     };
 
-    public Product(int prize, int vol){
+    public Product(String ref, int prize, int vol, int weight, int size, Category category){
         this.prize = prize;
         this.vol = vol;
+        this.ref = ref;
+        this.weight = weight;
+        this.size = size;
     }
 
 
@@ -65,7 +68,7 @@ public class Product implements IProduct {
     }
     @Override
     public void putInto(IContainer container) {
-        
+
     }
 
 

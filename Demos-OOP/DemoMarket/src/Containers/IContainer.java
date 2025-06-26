@@ -1,6 +1,7 @@
 package Containers;
 
 import java.util.Set;
+import Products.IProduct;
 
 public interface IContainer {
     String getRef();

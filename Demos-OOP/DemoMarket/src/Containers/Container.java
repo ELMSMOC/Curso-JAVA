@@ -5,13 +5,14 @@ import java.util.Set;
 import Products.IProduct;
 import enums.ContainerType;
 
-public class Container implements IContainer{
+public abstract class Container implements IContainer{
 
     private String ref;
-    private int resistance;
-    private int volumen;
-    private int surface;
     private ContainerType type; 
+    private int resistance;
+    private int surface;
+    private int volumen;
+    private Set<IProduct> products;
 
     public Container(int resistance, int volumen, int size){
         this.resistance = resistance;
@@ -27,7 +28,7 @@ public class Container implements IContainer{
 
     @Override
     public ContainerType getType() {
-        return 
+        return type;
     }
 
     @Override
@@ -36,41 +37,36 @@ public class Container implements IContainer{
     }
 
     @Override
-    public int volAvailable() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'volAvailable'");
-    }
-
-    @Override
     public int getResistance() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getResistance'");
+        return resistance;
     }
 
 
     @Override
     public Set<IProduct> getProducts() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProducts'");
+        return products;
     }
 
+    
     @Override
-    public String getTyppe() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTyppe'");
+    public int getSurface() {
+        return surface;
     }
 
     // LOGICA
     @Override
-    public boolean addProduct(IProduct product) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addProduct'");
+    public boolean canInsert(IProduct product) {
+        return false;
     }
 
     @Override
     public boolean isResistent(IProduct product) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isResistent'");
+        return false;
+    }
+
+    @Override
+    public int volumenDisposable(){
+        return 0;
     }
 
    

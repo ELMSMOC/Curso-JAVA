@@ -1,20 +1,34 @@
 package Products;
 
+import java.util.Locale.Category;
 
-
+import Containers.IContainer;
 
 public class Product implements IProduct {
+    String ref;
     private int prize;
     private int vol;
+    private int size;
+    private int count;
+    private int weight;
+    private Category category;
 
 
-    public static void getPrize(Object obj){
+    @Override
+    public String getRef() {
+        return ref;
+    }
+
+    public int getPrize(Object obj){
+        return prize;
     };
 
-    public static void getSize(Object obj){
+    public int getSize(Object obj){
+        return size;
     };
 
-    public static void getCount(Object obj){
+    public int getCount(Object obj){
+        return count;
     };
 
     public Product(int prize, int vol){
@@ -22,40 +36,37 @@ public class Product implements IProduct {
         this.vol = vol;
     }
 
-    @Override
-    public String getRef() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getRef'");
-    }
 
     @Override
     public int getWeight() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getWeight'");
+        return weight;
     }
 
     @Override
     public int getVol() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getVol'");
+        return vol;
     }
 
     @Override
     public String getCategory() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCategory'");
+        return category.toString();
     }
 
     @Override
-    public boolean isCompatible() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isCompatible'");
+    public boolean isCompatible(IProduct i) {
+        // TODO
+        return false;
     }
 
     @Override
-    public void addProduct() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addProduct'");
+    public boolean hasSpace(IContainer container) {
+    //    TODO
+        return false;
     }
+    @Override
+    public void putInto(IContainer container) {
+        
+    }
+
 
 }

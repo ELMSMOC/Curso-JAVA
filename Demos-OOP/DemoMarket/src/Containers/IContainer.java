@@ -11,19 +11,19 @@ public interface IContainer {
     
     int getVol();
     
-    int volAvailable();
+    int getSurface();
     
     int getResistance();
-    // Setters
     ContainerType getType();
     
+  
     Set<IProduct> getProducts();
 
     // Logica
     
-    String getTyppe();
+    int volumenDisposable();
 
-    boolean addProduct (IProduct product);
+    boolean canInsert (IProduct product);
 
     boolean isResistent(IProduct product); 
 }

@@ -1,8 +1,12 @@
 package Products;
 
+
+
+
 public class Product implements IProduct {
     private int prize;
     private int vol;
+
 
     public static void getPrize(Object obj){
     };

@@ -3,29 +3,36 @@ package Containers;
 import java.util.Set;
 
 import Products.IProduct;
+import enums.ContainerType;
 
 public class Container implements IContainer{
 
+    private String ref;
     private int weigthAvailable;
     private int volumen;
-    private int size;
+    private int surface;
+    private ContainerType type; 
 
     public Container(int weigthAvailable, int volumen, int size){
         this.weigthAvailable = weigthAvailable;
         this.volumen = volumen;
-        this.size = size;
+        this.surface = size;
+    }
+
+    // Getters
+    @Override
+    public String getReference() {
+       return ref;
     }
 
     @Override
-    public String getRef() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getRef'");
+    public ContainerType getType() {
+        return 
     }
 
     @Override
     public int getVol() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getVol'");
+        return volumen;
     }
 
     @Override
@@ -40,6 +47,7 @@ public class Container implements IContainer{
         throw new UnsupportedOperationException("Unimplemented method 'getResistance'");
     }
 
+
     @Override
     public Set<IProduct> getProducts() {
         // TODO Auto-generated method stub
@@ -52,6 +60,7 @@ public class Container implements IContainer{
         throw new UnsupportedOperationException("Unimplemented method 'getTyppe'");
     }
 
+    // LOGICA
     @Override
     public boolean addProduct(IProduct product) {
         // TODO Auto-generated method stub
@@ -63,5 +72,9 @@ public class Container implements IContainer{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'isResistent'");
     }
+
+   
+
+  
 
 }

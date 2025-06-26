@@ -7,34 +7,39 @@ import Products.IProduct;
 
 public class Order implements IOrder{
 
+    private String ref;
+    private Set<IContainer> containers;
+    private Set<IProduct> products;
+
+    public Order(String ref){
+        this.ref = ref;
+    } 
+
     @Override
     public String getRef() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getRef'");
+        return ref;
     }
 
     @Override
-    public Set<IOrder> getProducts() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProducts'");
+    public Set<IProduct> getProducts() {
+       return products;
     }
 
     @Override
     public Set<IContainer> getContainers() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getContainers'");
+        return containers;
     }
 
     @Override
     public void addContainer(IContainer container) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addContainer'");
+        containers.add(container); // Nos ahorramos el this
     }
 
     @Override
     public IContainer addProduct(IProduct product) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addProduct'");
+        products.add(product);
+        return  null;
+        // TODO
     }
 
 }

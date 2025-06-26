@@ -1,6 +1,6 @@
 package Products;
 
-public class Drugstore extends Product{
+public class Drugstore extends Product {
 
     public Drugstore(int prize, int vol) {
         super(prize, vol);

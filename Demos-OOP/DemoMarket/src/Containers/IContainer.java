@@ -9,15 +9,19 @@ public interface IContainer {
     // Getters
     String getReference();
     
-    int getVol();
-    
-    int getSurface();
     
     int getResistance();
     ContainerType getType();
-    
-  
     Set<IProduct> getProducts();
+
+    
+    
+    
+
+    // Propiedades calculadas
+    
+    int calcSurface();
+    int calcVolumen();
 
     // Logica
     

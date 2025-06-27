@@ -10,9 +10,10 @@ public interface IOrder {
     // Getters
     String getRef ();
     Set<IContainer> getContainers();
-    Set<IProduct> getProducts();
-
+    
     // Logica
+    Set<IProduct> getCalculatedProducts();
+    
     void addContainer(IContainer container);
     IContainer addProduct(IProduct product);
 }

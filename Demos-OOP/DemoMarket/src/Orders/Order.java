@@ -1,5 +1,6 @@
 package Orders;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import Containers.IContainer;
@@ -9,7 +10,6 @@ public class Order implements IOrder{
 
     private String ref;
     private Set<IContainer> containers;
-    private Set<IProduct> products;
 
     public Order(String ref){
         this.ref = ref;
@@ -21,7 +21,13 @@ public class Order implements IOrder{
     }
 
     @Override
-    public Set<IProduct> getProducts() {
+    public Set<IProduct> getCalculatedProducts() {
+        Set<IProduct> products = new HashSet<>();
+
+        for (IContainer container : containers) {
+            products.addAll(container);
+        }
+
        return products;
     }
 

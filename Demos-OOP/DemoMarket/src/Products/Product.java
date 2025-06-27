@@ -13,6 +13,13 @@ public abstract class Product implements IProduct {
     private Category category;
     private int count;
 
+    public Product(String ref, int prize, int vol, int weight, int size, Category category){
+        this.prize = prize;
+        this.vol = vol;
+        this.ref = ref;
+        this.weight = weight;
+        this.size = size;
+    }
 
     @Override
     public String getRef() {
@@ -30,15 +37,6 @@ public abstract class Product implements IProduct {
     public int getCount(Object obj){
         return count;
     };
-
-    public Product(String ref, int prize, int vol, int weight, int size, Category category){
-        this.prize = prize;
-        this.vol = vol;
-        this.ref = ref;
-        this.weight = weight;
-        this.size = size;
-    }
-
 
     @Override
     public int getWeight() {

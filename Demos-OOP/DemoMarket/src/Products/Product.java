@@ -4,7 +4,7 @@ import java.util.Locale.Category;
 
 import Containers.IContainer;
 
-public class Product implements IProduct {
+public abstract class Product implements IProduct {
     String ref;
     private int prize;
     private int vol;

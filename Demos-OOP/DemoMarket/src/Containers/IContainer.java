@@ -9,14 +9,11 @@ public interface IContainer {
     // Getters
     String getReference();
     
-    
-    int getResistance();
     ContainerType getType();
-    Set<IProduct> getProducts();
+    // int getResistance();
 
-    
-    
-    
+    // Devuelve un set tipo interfaz Iproduct
+    Set<IProduct> getProducts();
 
     // Propiedades calculadas
     

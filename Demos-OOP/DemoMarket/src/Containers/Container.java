@@ -1,6 +1,6 @@
 package Containers;
-
 import java.util.Set;
+import enums.ContainerType;
 
 import Products.IProduct;
 
@@ -8,12 +8,13 @@ public abstract class Container implements IContainer{
 
     private String ref;
     private int resistance;
+    private int height;
 
 
     private Set<IProduct> products;
 
-    public Container(int resistance, int volumen, int size){
-        this.resistance = resistance;
+    public Container(String ref){
+        this.ref = ref;
     }
 
     // Getters
@@ -21,42 +22,42 @@ public abstract class Container implements IContainer{
     public String getReference() {
        return ref;
     }
-
-    // @Override
-    // public ContainerType getType() {
-    //     return type;
-    // }
-
-    // @Override
-    // public int getResistance() {
-    //     return resistance;
-    // }
-
-    // @Override
-    // public int calcVolumen() {
-    //     return width * height * length;
-    // }
-
+    
     @Override
     public Set<IProduct> getProducts() {
         return products;
     }
 
-    
-    // @Override
-    // public int getSurface() {
-    //     return 0;
-    // }
+    @Override
+    public int calcVolumen() {
+        return calcSurface() * height;
+    }
 
     // LOGICA
     @Override
     public boolean canInsert(IProduct product) {
+        // TODO
         return false;
     }
 
     @Override
     public int volumenDisposable(){
+        // TODO
         return 0;
+    }
+
+    @Override
+    public String toString() {
+         String message = """
+                 %s ref. %s
+                 Hash: %s
+                 """.formatted(
+                    getType(),
+                    ref,
+                    super.toString()
+                 );   
+
+        return message;
     }
 
    

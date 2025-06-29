@@ -7,8 +7,8 @@ import Products.IProduct;
 public abstract class Container implements IContainer{
 
     private String ref;
-    private int resistance;
-    private int height;
+    protected int resistance;
+    protected int height;
 
 
     private Set<IProduct> products;
@@ -37,7 +37,7 @@ public abstract class Container implements IContainer{
     @Override
     public boolean canInsert(IProduct product) {
         // TODO
-        return false;
+        return true;
     }
 
     @Override

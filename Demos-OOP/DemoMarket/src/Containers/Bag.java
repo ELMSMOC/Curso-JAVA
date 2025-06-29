@@ -7,14 +7,13 @@ import enums.ContainerType;
 
 public class Bag extends Container {
 
-    // private int width;
     private int length;
 
     public Bag(String ref, int resistance, int length, int height) {
         super(ref);
-        // this.resistance = resistance;
+        this.resistance = resistance;
         this.length = length;
-        // this.height = height;
+        this.height = height;
     }
 
     @Override

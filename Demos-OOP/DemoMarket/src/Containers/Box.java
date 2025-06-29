@@ -12,7 +12,7 @@ public class Box extends Container{
         super(ref);
         this.width = width;
         this.length = length;
-        // this.height = height;
+        this.height = height;
     }
 
     @Override

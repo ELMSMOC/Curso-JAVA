@@ -15,13 +15,16 @@ public class SuperApp {
         System.out.println("Bienvenido a nuestro supermercado onLine");
 
         IOrder order1 = new Order("Pepe-001");
-        IOrder order3 = new Order("Pepe-001"); 
-        boolean isEq = (order1 == order3) ? false: true;
-        System.out.println( isEq);
-        System.err.println(order1);
+        IOrder order2 = new Order("Juli-002"); 
+
         
         IContainer box1 = new Box("B007", 50, 50, 50);
         IContainer bag1 = new Bag("B005", 50, 50, 5);
+        
+        order1.addContainer(box1);
+        order1.addContainer(bag1);
+        
+        System.err.println(order1);
         
         System.out.println(box1);
         // System.out.println(bag1);

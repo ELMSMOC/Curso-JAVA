@@ -1,14 +1,15 @@
 package Products;
 
-import java.util.Locale.Category;
+import enums.Category;
 
 public class Pets extends Product{
 
-    public Pets(String ref, int prize, int vol, int weight, int size, Category category) {
-        super(ref, prize, vol, weight, size, category);
-        //TODO Auto-generated constructor stub
+    public Pets(String ref, int vol, int weight) {
+        super(ref, vol, weight);
     }
 
-
-
+    @Override
+    public enums.Category getCategory() {
+        return Category.PETS;
+    }
 }

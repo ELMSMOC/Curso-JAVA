@@ -2,15 +2,15 @@ package Products;
 
 import enums.Category;
 
-public class Food extends Product{
+public class Hygiene extends Product{
 
-    public Food(String ref, int vol, int weight) {
+    public Hygiene(String ref, int vol, int weight) {
         super(ref, vol, weight);
 
     }
 
     @Override
     public Category getCategory() {
-        return Category.FOOD;
+        return Category.HYGIENE;
     } 
 }

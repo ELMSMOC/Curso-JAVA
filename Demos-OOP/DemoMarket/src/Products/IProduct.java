@@ -1,9 +1,8 @@
 package Products;
 
-import java.util.Locale.Category;
+import enums.Category;
 
 import Containers.IContainer;
-import enums.Category;
 
 public interface IProduct {
     String getRef();

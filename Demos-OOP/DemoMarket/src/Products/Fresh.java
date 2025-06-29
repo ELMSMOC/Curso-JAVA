@@ -1,13 +1,11 @@
 package Products;
 
-import java.util.Locale.Category;
+import enums.Category;
 
 public class Fresh extends Food{
 
-    public Fresh(String ref, int prize, int vol, int weight, int size, Category category) {
-        super(ref, prize, vol, weight, size, category);
-        //TODO Auto-generated constructor stub
+    public Fresh(String ref, int vol, int weight) {
+        super(ref, vol, weight);
     }
-
 
 }

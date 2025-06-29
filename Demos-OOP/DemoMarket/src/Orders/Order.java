@@ -13,6 +13,7 @@ public class Order implements IOrder{
 
     public Order(String ref){
         this.ref = ref;
+        this.containers = new HashSet<>();
     } 
 
     @Override
@@ -21,19 +22,19 @@ public class Order implements IOrder{
     }
 
     @Override
+    public Set<IContainer> getContainers() {
+        return containers;
+    }
+
+    @Override
     public Set<IProduct> getCalculatedProducts() {
         Set<IProduct> products = new HashSet<>();
 
         for (IContainer container : containers) {
-            products.addAll(container);
+            products.addAll(container.getProducts());
         }
 
        return products;
-    }
-
-    @Override
-    public Set<IContainer> getContainers() {
-        return containers;
     }
 
     @Override
@@ -43,9 +44,28 @@ public class Order implements IOrder{
 
     @Override
     public IContainer addProduct(IProduct product) {
-        products.add(product);
-        return  null;
+        for (IContainer container : containers) {
+            if (container.canInsert(product))
+            return container;
+        }
+        return null;
         // TODO
+    }
+
+    @Override
+    public String toString() {
+         String message = """
+                 Pedido: %s
+                 Hash: %s
+                 """.formatted(ref,
+                 super.toString()
+                 );  
+                 
+        for (IContainer container : containers) {
+            message += container;
+        }
+
+        return message;
     }
 
 }

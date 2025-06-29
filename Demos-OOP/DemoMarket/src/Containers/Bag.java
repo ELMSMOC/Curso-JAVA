@@ -12,9 +12,9 @@ public class Bag extends Container {
 
     public Bag(String ref, int resistance, int length, int height) {
         super(ref);
-        this.resistance = resistance;
+        // this.resistance = resistance;
         this.length = length;
-        this.height = height;
+        // this.height = height;
     }
 
     @Override

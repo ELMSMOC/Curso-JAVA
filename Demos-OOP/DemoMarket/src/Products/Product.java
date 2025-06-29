@@ -1,42 +1,27 @@
 package Products;
 
-import java.util.Locale.Category;
+import enums.Category;
 
 import Containers.IContainer;
 
 public abstract class Product implements IProduct {
-    String ref;
-    private int prize;
-    private int vol;
-    private int size;
-    private int weight;
+    // private int prize;
+    // private int size;
     private Category category;
-    private int count;
+    private String ref;
+    private int weight;
+    private int vol;
 
-    public Product(String ref, int prize, int vol, int weight, int size, Category category){
-        this.prize = prize;
+    public Product(String ref, int vol, int weight){
         this.vol = vol;
         this.ref = ref;
         this.weight = weight;
-        this.size = size;
     }
 
     @Override
     public String getRef() {
         return ref;
     }
-
-    public int getPrize(Object obj){
-        return prize;
-    };
-
-    public int getSize(Object obj){
-        return size;
-    };
-
-    public int getCount(Object obj){
-        return count;
-    };
 
     @Override
     public int getWeight() {
@@ -49,8 +34,8 @@ public abstract class Product implements IProduct {
     }
 
     @Override
-    public String getCategory() {
-        return category.toString();
+    public void putInto(IContainer container) {
+        // TODO Auto-generated method stub
     }
 
     @Override
@@ -64,10 +49,13 @@ public abstract class Product implements IProduct {
     //    TODO
         return false;
     }
+
     @Override
-    public void putInto(IContainer container) {
-
+    public String toString() {
+        String message = "[%s] %s %s cm3 - %s g".formatted(
+         getCategory().toString().toUpperCase(), ref,    
+        vol, weight);
+        return message;
     }
-
 
 }

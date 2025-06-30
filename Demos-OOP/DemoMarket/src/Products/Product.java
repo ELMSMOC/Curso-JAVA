@@ -40,7 +40,7 @@ public abstract class Product implements IProduct {
 
     @Override
     public boolean hasSpace(IContainer container) {
-        return vol <= container.volumenDisposable();
+        return vol <= container.volumenAvailable();
     }
 
     @Override

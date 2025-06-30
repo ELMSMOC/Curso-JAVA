@@ -22,7 +22,7 @@ public interface IContainer {
 
     // Logica
     
-    int volumenDisposable();
+    int volumenAvailable();
 
     boolean canInsert (IProduct product);
 

@@ -36,7 +36,23 @@ public abstract class Container implements IContainer{
     // LOGICA
     @Override
     public boolean canInsert(IProduct product) {
-        // TODO
+        // Es resistente?
+        if (!this.isResistent(product)){
+            return false;
+        }
+        // Tiene espacio el container (this) para product?
+        if (!product.hasSpace(this)){
+            return false;
+        }
+
+        // Son compatibles?
+        for (IProduct item : products) {
+        // if (item.isCompatible(product)) Seria igual
+          if(!product.isCompatible(item)){
+            return false;
+          }
+        }
+        
         return true;
     }
 
@@ -46,7 +62,7 @@ public abstract class Container implements IContainer{
     }
 
     @Override
-    public int volumenDisposable(){
+    public int volumenAvailable(){
         int totalVol =  calcVolumen();
         int usedVol = 0;
 

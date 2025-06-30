@@ -46,6 +46,8 @@ public class Order implements IOrder{
     public IContainer addProduct(IProduct product) {
         for (IContainer container : containers) {
             if (container.canInsert(product))
+            // container.getProducts().add(product);
+            product.putInto(container);
             return container;
         }
         return null;

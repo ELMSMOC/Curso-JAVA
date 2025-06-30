@@ -1,6 +1,5 @@
 package Containers;
 
-import Products.IProduct;
 import enums.ContainerType;
 
 public class Box extends Container{
@@ -23,11 +22,6 @@ public class Box extends Container{
     @Override
     public int calcSurface() {
        return width * length;
-    }
-
-    @Override
-    public boolean isResistent(IProduct product) {
-        return false;
     }
 
 

@@ -12,4 +12,9 @@ public class Pets extends Product{
     public enums.Category getCategory() {
         return Category.PETS;
     }
+
+    @Override
+    public boolean isCompatible(IProduct product) {  
+        return product.getCategory() == Category.PETS || product.getCategory() == Category.HYGIENE;
+    }
 }

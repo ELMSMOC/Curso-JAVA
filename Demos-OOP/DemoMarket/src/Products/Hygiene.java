@@ -12,5 +12,10 @@ public class Hygiene extends Product{
     @Override
     public Category getCategory() {
         return Category.HYGIENE;
+    }
+
+    @Override
+    public boolean isCompatible(IProduct product) {
+        return product.getCategory() == Category.PETS || product.getCategory() == Category.HYGIENE;
     } 
 }

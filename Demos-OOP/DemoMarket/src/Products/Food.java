@@ -12,5 +12,10 @@ public class Food extends Product{
     @Override
     public Category getCategory() {
         return Category.FOOD;
+    }
+
+    @Override
+    public boolean isCompatible(IProduct product) {
+        return product.getCategory() == Category.FOOD;
     } 
 }

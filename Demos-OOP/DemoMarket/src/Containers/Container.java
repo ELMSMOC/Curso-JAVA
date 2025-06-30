@@ -1,6 +1,6 @@
 package Containers;
 import java.util.Set;
-import enums.ContainerType;
+
 
 import Products.IProduct;
 
@@ -41,9 +41,20 @@ public abstract class Container implements IContainer{
     }
 
     @Override
+    public boolean isResistent(IProduct product) {
+        return true;
+    }
+
+    @Override
     public int volumenDisposable(){
-        // TODO
-        return 0;
+        int totalVol =  calcVolumen();
+        int usedVol = 0;
+
+        for (IProduct product : products) {
+            usedVol += product.getVol();
+        }
+
+        return totalVol - usedVol;
     }
 
     @Override

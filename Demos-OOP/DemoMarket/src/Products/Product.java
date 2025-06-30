@@ -35,19 +35,12 @@ public abstract class Product implements IProduct {
 
     @Override
     public void putInto(IContainer container) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public boolean isCompatible(IProduct i) {
-        // TODO
-        return false;
+        container.getProducts().add(this);
     }
 
     @Override
     public boolean hasSpace(IContainer container) {
-    //    TODO
-        return false;
+        return vol <= container.volumenDisposable();
     }
 
     @Override

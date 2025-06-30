@@ -10,7 +10,7 @@ public interface IProduct {
     int getVol();
     Category getCategory();
     
-    boolean isCompatible(IProduct i);
+    boolean isCompatible(IProduct product);
     boolean hasSpace(IContainer container);
     void putInto(IContainer containeri);
 }

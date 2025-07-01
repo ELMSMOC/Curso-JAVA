@@ -1,10 +1,17 @@
 package Ahorcado;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class testAhorcado {
+    private String word;
+    public testAhorcado (String word){
+        this.word = wordGenerator();
+    }
 
+    
     static String wordGenerator(){
         String[] words = {
             "Embrujada",
@@ -16,58 +23,56 @@ public class testAhorcado {
             "Arbol",
             "Pocoyo"
         };
-
+        
         Random r = new Random();
         int index = r.nextInt(words.length);
         // System.out.println(words[index]);
         return words[index];
     }
-
-    static String printHyphens(String word){
-        String palabra = word;
-        int count = 0;
+    
+    static int printHyphens(String word){
         for (int i=0; i<word.length();i++) {
-            count++;
             System.out.printf("_ ");
         }
-        System.out.printf("");
-        return palabra;
+        System.out.println("");
+        return word.length();
     }
-
-
-
+    
+    
+    
     static String getLetter() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Dime una letra");
         String letter = scanner.nextLine();
         return letter;
     }
+    
+    private static List<Integer> getLetterPositions(String letter, String word){
+        List<Integer> indexList = new ArrayList<Integer>();
 
-    static private boolean wordComparation(String letter, String word){
-        String out = "";
         for (int j = 0; j < word.length(); j++) {
-            String let = word.charAt(j);
-            if (let.equals(letter)){
-            System.out.println("Acertaste!" + letter);
-                return true;
-                break;
-            }
+            
         }
-
-        return false;
+        
+        return indexList;
         
     }
     
     
     public static void main(String[] args) {
+        testAhorcado nuevoJuego = new testAhorcado(wordGenerator());
+        System.out.println();
+        String message = "Palabra con %s letras";
+        System.out.println(nuevoJuego.word);
+        System.out.println(message.formatted(printHyphens(nuevoJuego.word)));
+
         String letter = getLetter();
-        String word = wordGenerator();
-        while (letter.length() != 1){
-        System.out.println(letter.length());
-            System.out.println("Solo una letra por favor");
-            letter=getLetter();
-        };
-        printHyphens(word);
-        System.out.println(wordComparation(letter, word));
+        System.out.println(getLetterPositions(letter, nuevoJuego.word));
+        
+        // while (letter.length() != 1){
+        //     System.out.println(letter.length());
+        //     System.out.println("Solo una letra por favor");
+        //     getLetter();
+        // };
     }
 }

@@ -8,33 +8,15 @@ public class BusinessException extends Exception {
     }
 
     ErrorCodes code;
-    BusinessException (ErrorCodes code, String message){
-        super(message);
-        this.code = code;
-    }
 
-    BusinessException (ErrorCodes code, String message, Throwable cause){
+    public BusinessException (ErrorCodes code, String message){
         super(generateMessage(code, message));
         this.code = code;
     }
 
-}
-
-enum ErrorCodes {
-    ERROR_EVEN("No se admiten pares"),
-    ERROR_NEGATIVE("No se admiten negativos"),
-    ERROR_ZERO("No se puede dividir por 0");
-
-    private String message;
-
-    @Override
-    public String toString() {
-        return this.message;
+    public BusinessException (ErrorCodes code, String message, Throwable cause){
+        super(generateMessage(code, message), cause);
+        this.code = code;
     }
 
-    ErrorCodes(String message){
-        this.message = message;
-    }
 }
-
-// public class Patada{} No se pueden dos clases publicas en el mismo file

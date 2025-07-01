@@ -1,7 +1,6 @@
-package local;
-import local.concept1.Square;
+package local.concept1;
 
-public class Main {
+public class Concept1 {
     public static void useTryCatch() {
         Square sq1 = new Square(10);
         Square sq2 = sq1;

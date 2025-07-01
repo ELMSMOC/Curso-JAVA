@@ -26,12 +26,10 @@ public class testAhorcado {
         return word;
     }
     
-    public static void printHyphens(String word){
-        for (int i=0; i<word.length();i++) {
-            char hyphen = '_';
-            System.out.print(hyphen + " ");
-        }
-        System.out.println("");
+    public static String printHyphens(String word){
+        String hyphenWord = "_".repeat(word.length());
+        System.out.println(hyphenWord);
+        return hyphenWord;
     }
 
     static String getLetter() {
@@ -54,24 +52,30 @@ public class testAhorcado {
         
     }
 
-    public static void printWordModified (List<Integer> indexList){
-
+    public static String updateWord (List<Integer> indexList, String letter, String wordMod){
+        String word = wordMod;
+        for (Integer integer : indexList) {
+            
+        }
+        return word;
     }
     
     
     public static void main(String[] args) {
         String word = wordGenerator();
         printHyphens(word);
+        
         System.out.println("------------------------------");
         String message = "Palabra con %s letras";
         System.out.println(message.formatted(word.length()));
         System.out.println(word);
 
         String letter = getLetter();
-        // // List<Integer> indexlist = getLetterPositions(letter, nuevoJuego.word);
-        // // for (Integer integer : indexlist) {
-            
-        // }
+        List<Integer> indexlist = getLetterPositions(letter, word);
+        for (int integer : indexlist) {
+            System.out.print(integer);
+        }
+        printWordModified(indexlist);
         // System.out.println();
         // while (letter.length() != 1){
         //     System.out.println(letter.length());

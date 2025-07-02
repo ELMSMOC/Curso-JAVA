@@ -1,9 +1,21 @@
 package local.concept1;
 
-public class factorial {
+import java.text.NumberFormat;
+
+public class Factorial {
+    private short num;
+
+    Factorial(short num){
+        this.num = num;
+    }
+
+    long calcFactorial(){
+        return calcFactorial();
+    }
+
     long calcFactorial(long num){
         if (num < 0){
-            num *= -1;
+            throw new IndexOutOfBoundsException();
         }
 
         long result = 1;
@@ -15,16 +27,20 @@ public class factorial {
         return result;
     }
 
-    // static long recursiveFactorial(long number){
-    //     if (number == 1){
-    //         return number;
-    //     }
-    //     long result = number * calcFactorial(number - 1);
-    //     return result;
-    // }
+    void show (){
+        // NumberFormat nf = NumberFormat.getInstance(Locale.GERMANY);
+        
+    }
+
 
     public static void main(String[] args) {
-        factorial fact = new factorial();
-        System.out.println(fact.calcFactorial(20));
+        Factorial fact = new Factorial();
+        short num = 10;
+        num = -5;
+        try {
+
+        } catch (Exception e){}
+        
+        System.out.println(fact.calcFactorial(num));
     }
 }

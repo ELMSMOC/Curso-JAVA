@@ -8,11 +8,11 @@ public class piedraPapelTijera {
         System.out.println("Elige entre papel, piedra o tijera");
         String choosenOne = scanner.nextLine();
         int userCoordenate = 4;
-        if (choosenOne.equals("Piedra")){
+        if (choosenOne.equals("Piedra".toLowerCase())){
                 userCoordenate = 0;
-            } else if (choosenOne.equals("Papel")){
+            } else if (choosenOne.equals("Papel".toLowerCase())){
                 userCoordenate = 1;
-            } else if (choosenOne.equals("Tijera")){
+            } else if (choosenOne.equals("Tijera".toLowerCase())){
                 userCoordenate = 2;
             };
         scanner.close();
@@ -23,6 +23,10 @@ public class piedraPapelTijera {
         Random r = new Random();
         int cpuChoose = r.nextInt(3);
         int userChoose = chooseItem();
+        String message = "La computadora eligio %s";
+        String cpuChooseText = (cpuChoose == 0) ? "piedra":  
+        (cpuChoose == 1) ? "papel": "tijera";
+        System.out.println(message.formatted(cpuChooseText));
 
         int[][] matrix = {{0,1,2},{2,0,1},{1,2,0}};
 
@@ -36,7 +40,7 @@ public class piedraPapelTijera {
     }
     
     public static void main(String[] args){
-
+            System.out.println("hola");
             calcCoordenates();
 
     }

@@ -7,66 +7,66 @@ import local.exceptions.BusinessException;
 import local.exceptions.ErrorCodes;
 import local.exceptions.TechnicalException;
 
-public class factorial {
+public class Factorial {
 
-    static void showNumber(long number) {
+      static void showNumber(long number) {
         NumberFormat nf = NumberFormat.getInstance(Locale.GERMANY);
         System.out.println(nf.format(number));
     }
 
-    private short num;
+    short number;
 
-    factorial() {
+    Factorial() {
     }
 
-    factorial(short num){
-        this.num = num;
+    Factorial(short number) {
+        this.number = number;
     }
 
-    long calcFactorial() throws BusinessException{
-        return calcFactorial(num);
+    long calculateFactorial() throws BusinessException {
+        return calculateFactorial(number);
     }
 
-    long calcFactorial(short num) throws BusinessException{
-        if (num < 0) {
-           String message = "No se puede calcular el factorial de " + num; 
+    long calculateFactorial(short number) throws BusinessException  {
+        if (number < 0) {
+           String message = "No se puede calcular el factorial de " + number; 
            // throw new TechnicalException(message);
            throw new BusinessException(ErrorCodes.ERROR_NEGATIVE, message);
         }
 
-        if (num > 10) {
-            String message = "No se puede calcular el factorial de " + num; 
+        if (number > 10) {
+            String message = "No se puede calcular el factorial de " + number; 
            // throw new TechnicalException(message);
            throw new BusinessException(ErrorCodes.ERROR_BIGGER_20, message);
         }
+
         long result = 1;
 
-        for (long i = num; i > 0; i--) {
-            result *= i;
+        for (short i = number; i > 0; i--) {
+            result = result * i;
+            // result *= i;
         }
-
         return result;
     }
 
-    void show (){
-        // NumberFormat nf = NumberFormat.getInstance(Locale.GERMANY);
-        
-    }
-
-
+  
     public static void main(String[] args) {
-        factorial fact = new factorial();
+        Factorial factorial = new Factorial();
         short num = 10;
+        num = 0;
+        num = 1;
         num = -5;
-        num = 22;
-
+        num = 21;
+        num = 20;
         try {
-            long result = fact.calcFactorial(num);
+            long result = factorial.calculateFactorial(num);
             showNumber(result);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
-        }
-        
-        System.out.println("Fin");
+        } 
+        System.out.println("Fin del programa");
+
+
     }
+
 }

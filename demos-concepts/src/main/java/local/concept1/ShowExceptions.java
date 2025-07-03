@@ -1,44 +1,52 @@
 package local.concept1;
-// Runtime Exceptions
-// 
-// NullPointerExceptions
+
+// Ejemplos de excepciones runtime
+// provocadas para probarlas
+// !! Código con errores!!
+
+// Excepciones que se muestran:
+// IndexOutOfBoundsException
+// NullPointerException
+// ClassCastException
+// NumberFormatException
 
 public class ShowExceptions {
-    String name = "Pepe";
-    
-    void makeIndexOutOfBoundsException(){
-        // IndexOutOfBoundsException
-        System.out.println(name.charAt(12));
 
+    String name = "Pepe";
+
+    void makeIndexOutOfBoundsException() {
+        System.out.println(name.charAt(10));
     }
 
     @SuppressWarnings("null")
-    void makeNullPointerException(){
+    void makeNullPointerException() {
         Square nada = null;
         nada.toString();
-        nada = new Square(2);
+        nada = new Square(0);
     }
 
-    void makeClassCastException(){
-        Object x = (Integer)4;
+    void makeClassCastException() {
+        Object x = (Integer) 4;
         System.out.println((String) x);
+    }
+
+    void makeNumberFormatException() {
+        String s = "4.5";
+        int i = Integer.parseInt(s);
+        System.out.println(i);
     }
 
     public static void main(String[] args) {
         ShowExceptions se = new ShowExceptions();
-        try{
-            se.makeIndexOutOfBoundsException();
-
-            se.makeNullPointerException();
-
+        try {
+            se.makeNumberFormatException();
             se.makeClassCastException();
-
-        } catch (IndexOutOfBoundsException | NullPointerException | ClassCastException e){
-            System.err.println("El indice es erroneo");
-            System.err.println(e.getClass().getSimpleName() + e.getMessage());
+            se.makeIndexOutOfBoundsException();
+            se.makeNullPointerException();
+        } catch (IndexOutOfBoundsException | NullPointerException | ClassCastException | NumberFormatException e) {
+            System.err.println(e.getClass().getSimpleName() + " - " + e.getMessage());
         }
-
-        se.makeNullPointerException();
-        System.out.println("Gracias por su visita");
+        System.out.println("Fin del programa");
     }
+
 }

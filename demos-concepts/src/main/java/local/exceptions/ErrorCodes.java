@@ -1,20 +1,18 @@
 package local.exceptions;
 
 public enum ErrorCodes {
-    ERROR_BIGGER_20("No puede ser mayor de 20"),
-    ERROR_EVEN("No se admiten pares"),
-    ERROR_NEGATIVE("No se admiten negativos"),
-    ERROR_ZERO("No se puede dividir por 0");
+    ERROR_BIGGER_20("No se admiten números mayores que 20"), 
+    ERROR_NEGATIVE("No se admiten números negativos"),
+    ERROR_ZERO("No se puedo dividir por cero");
 
-    private String message;
+    String message;
+
+    ErrorCodes(String message) {
+        this.message = message;
+    }
 
     @Override
     public String toString() {
         return this.message;
     }
-
-    ErrorCodes(String message){
-        this.message = message;
-    }
-
 }

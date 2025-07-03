@@ -1,5 +1,9 @@
 package local.concept1;
 
+/**
+ * Clase Square: dimensiones de un cuadrado
+ * 
+ */
 public class Square implements Cloneable {
 
     public int side;
@@ -26,7 +30,7 @@ public class Square implements Cloneable {
     }
 
     @Override
-	public Object clone() throws CloneNotSupportedException {
+	public Object clone() throws CloneNotSupportedException  {
 	    return super.clone();
 	}
 }

@@ -7,7 +7,7 @@ import local.exceptions.BusinessException;
 import local.exceptions.ErrorCodes;
 import local.exceptions.TechnicalException;
 
-public class Factorial {
+public class factorial {
 
     static void showNumber(long number) {
         NumberFormat nf = NumberFormat.getInstance(Locale.GERMANY);
@@ -16,10 +16,10 @@ public class Factorial {
 
     private short num;
 
-    Factorial() {
+    factorial() {
     }
 
-    Factorial(short num){
+    factorial(short num){
         this.num = num;
     }
 
@@ -55,7 +55,7 @@ public class Factorial {
 
 
     public static void main(String[] args) {
-        Factorial fact = new Factorial();
+        factorial fact = new factorial();
         short num = 10;
         num = -5;
         num = 22;

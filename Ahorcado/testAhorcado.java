@@ -60,10 +60,9 @@ public class testAhorcado {
         
     }
 
-    public String updateWord (List<Integer> indexList, String letter, String wordMod){
-        String word = wordMod;
+    public String updateWord (List<Integer> indexList, String letter){
         for (Integer integer : indexList) {
-            
+            // this.wordMod.charAt(integer) = letter;
         }
         return word;
     }
@@ -73,7 +72,8 @@ public class testAhorcado {
         testAhorcado ta = new testAhorcado();
         ta.wordGenerator();
         System.out.println(ta.word);
-        System.out.println(printHyphens());
+
+        System.out.println(ta.wordMod);
 
         System.out.println("------------------------------");
         int wordLengthh = ta.wordLength;
@@ -81,10 +81,8 @@ public class testAhorcado {
         System.out.println(message.formatted(wordLengthh));
         String letter = ta.getLetter();
         List<Integer> indexlist = ta.getLetterPositions(letter, ta.word);
-        for (int integer : indexlist) {
-            System.out.print(integer);
-        }
-        ta.updateWord(indexlist, letter, ta.wordMod);
+
+        // ta.updateWord(indexlist, letter, );
         // System.out.println();
         // while (letter.length() != 1){
         //     System.out.println(letter.length());

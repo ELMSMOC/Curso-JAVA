@@ -6,8 +6,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class testAhorcado {
+    String word = wordGenerator();
+    int wordLength = this.word.length();
+    String wordMod = printHyphens(word);
 
-    static String wordGenerator(){
+    // public testAhorcado (String word, String wordMod){
+    //     this.word = word;
+    //     this.wordMod = wordMod;
+    // }
+
+    public String wordGenerator(){
         String[] words = {
             "Embrujada",
             "Helado",
@@ -26,20 +34,20 @@ public class testAhorcado {
         return word;
     }
     
-    public static String printHyphens(String word){
+    String printHyphens(String word){
         String hyphenWord = "_".repeat(word.length());
         System.out.println(hyphenWord);
         return hyphenWord;
     }
 
-    static String getLetter() {
+    String getLetter() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Dime una letra");
         String letter = scanner.nextLine();
         return letter;
     }
     
-    private static List<Integer> getLetterPositions(String letter, String word){
+    private List<Integer> getLetterPositions(String letter, String word){
         List<Integer> indexList = new ArrayList<Integer>();
 
         for (int j = 0; j < word.length(); j++) {
@@ -52,7 +60,7 @@ public class testAhorcado {
         
     }
 
-    public static String updateWord (List<Integer> indexList, String letter, String wordMod){
+    public String updateWord (List<Integer> indexList, String letter, String wordMod){
         String word = wordMod;
         for (Integer integer : indexList) {
             
@@ -62,20 +70,21 @@ public class testAhorcado {
     
     
     public static void main(String[] args) {
-        String word = wordGenerator();
-        printHyphens(word);
-        
-        System.out.println("------------------------------");
-        String message = "Palabra con %s letras";
-        System.out.println(message.formatted(word.length()));
-        System.out.println(word);
+        testAhorcado ta = new testAhorcado();
+        ta.wordGenerator();
+        System.out.println(ta.word);
+        System.out.println(printHyphens());
 
-        String letter = getLetter();
-        List<Integer> indexlist = getLetterPositions(letter, word);
+        System.out.println("------------------------------");
+        int wordLengthh = ta.wordLength;
+        String message = "Palabra con %s letras";
+        System.out.println(message.formatted(wordLengthh));
+        String letter = ta.getLetter();
+        List<Integer> indexlist = ta.getLetterPositions(letter, ta.word);
         for (int integer : indexlist) {
             System.out.print(integer);
         }
-        printWordModified(indexlist);
+        ta.updateWord(indexlist, letter, ta.wordMod);
         // System.out.println();
         // while (letter.length() != 1){
         //     System.out.println(letter.length());

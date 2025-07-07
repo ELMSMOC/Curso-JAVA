@@ -1,7 +1,5 @@
 package local.concept2_vc;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
 
 import local.exceptions.BusinessException;
 import local.exceptions.ErrorCodes;

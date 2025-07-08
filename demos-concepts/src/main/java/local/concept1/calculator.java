@@ -5,7 +5,7 @@ import java.util.Scanner;
 import local.exceptions.BusinessException;
 import local.exceptions.ErrorCodes;
 
-public class calculator {
+public class Calculator {
 
     private int num1;
     private int num2;
@@ -67,6 +67,7 @@ public class calculator {
 
     private int getInteger(String message) {
 
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
         int num = scanner.nextInt();
@@ -75,7 +76,7 @@ public class calculator {
     }
 
     public static void main(String[] args) {
-        calculator calc = new calculator();
+        Calculator calc = new Calculator();
         // Bucle while para repetir con distintos pares de números
         calc.setNum1("Dime un número entero");
         calc.setNum2("Dime otro número entero");

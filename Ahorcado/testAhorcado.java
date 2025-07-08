@@ -9,6 +9,7 @@ public class testAhorcado {
     String word = wordGenerator();
     int wordLength = this.word.length();
     String wordMod = printHyphens(word);
+    int failCounter = 0;
 
     // public testAhorcado (String word, String wordMod){
     // this.word = word;
@@ -83,7 +84,7 @@ public class testAhorcado {
         System.out.println(message.formatted(wordLengthh));
         
         
-        while (!ta.wordMod.equals(ta.word)) {
+        while (!ta.wordMod.equals(ta.word) || ta.failCounter == 5) {
             String letter = ta.getLetter();
             
             List<Integer> indexlist = ta.getLetterPositions(letter, ta.word);

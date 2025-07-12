@@ -1,4 +1,4 @@
-package local.collections.exercices;
+package local.collections.exercises.Ex03_Employees;
 
 import java.util.List;
 

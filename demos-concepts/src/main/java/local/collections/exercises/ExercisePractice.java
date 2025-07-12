@@ -13,7 +13,7 @@ public class ExercisePractice {
     }
 
     Stack<Character> revertStack (Stack<Character> stack){
-         st = stack.reversed();
+        //  st = stack.reversed();
         return st;
     }
 
@@ -23,7 +23,7 @@ public class ExercisePractice {
     public static void main(String[] args) {
         ExercisePractice ep = new ExercisePractice();
         Stack<Character> popeye = ep.populateStackList("monja");
-        popeye.revertStack();
+        // popeye.revertStack();
         System.out.println(popeye);
     }
 

@@ -34,5 +34,6 @@ public class appMainShapes {
         shapes.addShape(new Rectangle(4, 6));
 
         shapes.calculateTotalArea();
+        shapes.shapeList.forEach(shape -> System.out.println(shape));
     }
 }

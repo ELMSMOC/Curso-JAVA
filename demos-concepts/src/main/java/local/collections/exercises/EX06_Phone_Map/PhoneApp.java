@@ -1,4 +1,4 @@
-package local.collections.exercises.EX06_Phone;
+package local.collections.exercises.EX06_Phone_Map;
 
 import java.util.HashMap;
 import java.util.Map;

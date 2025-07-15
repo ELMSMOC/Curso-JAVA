@@ -1,4 +1,4 @@
-package local.collections.exercises.EX06_PhoneSet;
+package local.collections.exercises.EX06_Phone_Map;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

@@ -7,26 +7,34 @@ import java.util.Scanner;
 
 public class ExerFile {
 
-    static String getScan(String nameSurname){
+    private static String getScan(String nameSurname) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca su " + nameSurname);
         String word = sc.nextLine();
         return word;
     }
 
-    public static void main(String[] args) {
+    static String getFullName() {
         StringBuilder sb = new StringBuilder();
         sb.append(getScan("nombre") + " ");
         sb.append(getScan("primer apellido") + " ");
         sb.append(getScan("segundo apellido") + " ");
-        System.out.println(sb);
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
 
         File file = new File("users.txt");
-        try (FileWriter fw = new FileWriter(file)){
-            file.createNewFile(users.txt);
-        } catch (IOException e) {
+        String u = getFullName();
 
-            e.printStackTrace();
+
+        try (FileWriter fw = new FileWriter(file)) { // 'true' para añadir sin sobrescribir
+        // if (file.getPath() == ){}
+            file.createNewFile(); // se crea el archivo si no existe
+            fw.write(u + "\n"); // escribe el nombre completo
+            System.out.println("Usuario guardado en users.txt");
+        } catch (IOException e) {
+            System.out.println("Error creating " + file);
         }
 
     }

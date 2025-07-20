@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class Analysis {
 
     private String text;
+
+    List<Integer> intList = new ArrayList<>();
+
   
     public String getText() {
         return text;
@@ -17,6 +20,8 @@ public class Analysis {
 
     public Analysis (){
         this.text = getScan();
+        this.intList = comparing();
+        this.wordList = getArrayList(text);
     }
     // Scanner 
 
@@ -28,17 +33,16 @@ public class Analysis {
     }
     
 // Devuelve array de palabras
-    public String[] getList (String txt){
+    public String[] getArrayList (String txt){
         String[] list = txt.split(" ");        
         return list;
     }
 
     public List<Integer> comparing(String[] list){
 
-        List<Integer> intList = new ArrayList<>();
 
         for (String string : list) {
-            int count = 1;
+            int count = 0;
             for (String x : wordList) {
                 if(string.equals(x)){
                     count++;

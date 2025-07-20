@@ -10,16 +10,16 @@ import com.cdsb.files.MessagesFS;
 
 public class FileTESTING {
 
-    public static String listFiles(String root){
+    public static String listFiles(String pathRoot){
         StringBuilder sb = new StringBuilder();
-        Path path = Path.of(root);
-        String message = "No existe";
+        Path path = Path.of(pathRoot);
+        String message = "Existe";
 
-        if(Files.notExists(root)) {
+        if(Files.exists(path) || Files.isDirectory(path)) {
             return message;
         }
 
-        if(!Files.isDirectory(root)) {
+        if(!Files.isDirectory(path)) {
             return "Es una carpeta";
         }
 

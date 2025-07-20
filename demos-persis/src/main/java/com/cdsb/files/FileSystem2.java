@@ -216,13 +216,13 @@ public class FileSystem2 {
         pathName = "demos-persis/pom.xml";
         pathName = "demos-persis";
         System.out.println(listFiles(pathName));
-        pathName = "demos-persis/resources";
-        pathName = "demos-persis/pom.xml";
-        pathName = "demos-persis/resources/sample";
-        System.out.println(createFolder(pathName));
-        pathName = "demos-persis/resources/sample/sample.txt";
-        System.out.println(writeFile(pathName, "Hola Pepe"));
-        pathName = "demos-persis/resources/sample.txt";
-        System.out.println(readFileToList(pathName));
+        // pathName = "demos-persis/resources";
+        // pathName = "demos-persis/pom.xml";
+        // pathName = "demos-persis/resources/sample";
+        // System.out.println(createFolder(pathName));
+        // pathName = "demos-persis/resources/sample/sample.txt";
+        // System.out.println(writeFile(pathName, "Hola Pepe"));
+        // pathName = "demos-persis/resources/sample.txt";
+        // System.out.println(readFileToList(pathName));
     }
 }

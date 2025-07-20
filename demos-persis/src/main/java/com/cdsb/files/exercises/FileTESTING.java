@@ -4,23 +4,22 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-
-
-import com.cdsb.files.MessagesFS;
-
 public class FileTESTING {
 
     public static String listFiles(String pathRoot){
         StringBuilder sb = new StringBuilder();
         Path path = Path.of(pathRoot);
-        String message = "Existe";
+        String[] message = {
+            "Existe",
+            "No es un directorio"
+        };
 
-        if(Files.exists(path) || Files.isDirectory(path)) {
-            return message;
+        if(Files.exists(path)) {
+            return message[0];
         }
 
         if(!Files.isDirectory(path)) {
-            return "Es una carpeta";
+            return message[1];
         }
 
         try {
@@ -36,9 +35,12 @@ public class FileTESTING {
         
     }
 
+    
+
 
     public static void main(String[] args) {
-        listFiles("demos-persisa");
+
+        System.out.println(listFiles("demo-persis"));
     }
 
 }

@@ -39,8 +39,6 @@ public class Analysis {
     }
 
     public List<Integer> comparing(String[] list){
-
-
         for (String string : list) {
             int count = 0;
             for (String x : wordList) {

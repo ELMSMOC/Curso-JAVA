@@ -154,7 +154,7 @@ public class TestAhorcado {
         System.out.println(message.formatted(ta.wordLength));
         
         
-        while (!ta.wordMod.equals(ta.word) || (ta.failCounter == 5)) {
+        while (!ta.wordMod.equals(ta.word) && (ta.failCounter <= 5)) {
             String letter = ta.getLetter();
             
             List<Integer> indexlist = ta.getLetterPositions(letter, ta.word);

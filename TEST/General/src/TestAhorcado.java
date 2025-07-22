@@ -1,20 +1,20 @@
-package Ahorcado;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class testAhorcado {
-    String word = wordGenerator();
-    int wordLength = this.word.length();
-    String wordMod = printHyphens(word);
+public class TestAhorcado {
+    String word;
+    int wordLength;
+    String wordMod;
     int failCounter = 0;
 
-    // public testAhorcado (String word, String wordMod){
-    // this.word = word;
-    // this.wordMod = wordMod;
-    // }
+    public TestAhorcado (){
+        this.word = wordGenerator();
+        this.wordMod = printHyphens(this.word);
+        this.wordLength = this.word.length();
+    }
 
     public String wordGenerator() {
         String[] words = {
@@ -57,6 +57,11 @@ public class testAhorcado {
             }
         }
 
+        if (indexList.size() == 0) {
+            this.failCounter++;
+            fail(this.failCounter);
+        }
+
         return indexList;
 
     }
@@ -71,23 +76,90 @@ public class testAhorcado {
 
     }
 
+    static void fail(int counter){
+        System.out.println("Has fallado");
+        switch (counter) {
+            
+            case 1:
+                System.out.println("""
+                +---+
+                |   |
+                    |
+                    |
+                    |
+                    |
+                =========""");
+                break;
+        
+            case 2:
+                System.out.println("""
+                    +---+
+                    |   |
+                    O   |
+                        |
+                        |
+                        |
+                    =========""");
+                break;
+            case 3:
+                System.out.println("""
+                    +---+
+                    |   |
+                    O   |
+                    |   |
+                        |
+                        |
+                    =========""");
+                break;
+            case 4:
+                System.out.println("""
+                    +---+
+                    |   |
+                    O   |
+                    /|  |
+                        |
+                        |
+                    =========""");
+                    break;
+            case 5:
+                    System.out.println("""
+                        +---+
+                        |   |
+                        O   |
+                        /|\\|
+                        / \\  |
+                            |
+                        =========""");
+                break;
+            default:
+                System.out.println("Se acabo en la anterior");
+        }
+
+
+
+
+
+
+    }
+
     public static void main(String[] args) {
-        testAhorcado ta = new testAhorcado();
-        ta.wordGenerator();
+        TestAhorcado ta = new TestAhorcado();
+        
         // System.out.println(ta.word);
 
         System.out.println("------------------------------");
         // System.out.println(ta.wordMod);
 
-        int wordLengthh = ta.wordLength;
         String message = "Palabra con %s letras";
-        System.out.println(message.formatted(wordLengthh));
+        System.out.println(message.formatted(ta.wordLength));
         
         
-        while (!ta.wordMod.equals(ta.word) || ta.failCounter == 5) {
+        while (!ta.wordMod.equals(ta.word) || (ta.failCounter == 5)) {
             String letter = ta.getLetter();
             
             List<Integer> indexlist = ta.getLetterPositions(letter, ta.word);
+            System.out.println(indexlist.size());
+            
 
             ta.wordMod = ta.updateWord(indexlist, letter, ta.wordMod);
             System.out.println(ta.wordMod);    

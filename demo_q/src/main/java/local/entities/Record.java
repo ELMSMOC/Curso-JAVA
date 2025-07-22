@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 @Table(name = "records")
 public class Record {
     @Column(name = "record_id")
-    @Id()
+    @Id
     @GeneratedValue(strategy =  GenerationType.UUID)
     private UUID id;
     private String content;
@@ -22,8 +22,7 @@ public class Record {
         // JPA default constructor
     }
 
-    public Record(UUID id, String content) {
-        this.id = id;
+    public Record(String content) {
         this.content = content;
     }
 

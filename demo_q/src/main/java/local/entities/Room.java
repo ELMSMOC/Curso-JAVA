@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Table(name = "rooms")
 public class Room {
     @Column(name = "room_id")
-    @Id()
+    @Id
     private String id;
     private String name;
     private int capacity;

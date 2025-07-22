@@ -22,11 +22,15 @@ public class Person {
         // JPA default constructor
     }
 
-    public Person(int id, String name, String surname, String email) {
-        this.id = id;
+    public Person(String name, String surname, String email) {
         this.name = name;
         this.surname = surname;
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Person [id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + "]";
     }
 
 

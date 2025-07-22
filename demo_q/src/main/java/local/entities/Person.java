@@ -17,4 +17,17 @@ public class Person {
     private String name;
     private String surname;
     private String email;
+
+    public Person(){
+        // JPA default constructor
+    }
+
+    public Person(int id, String name, String surname, String email) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+    }
+
+
 }

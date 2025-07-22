@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Records")
+@Table(name = "records")
 public class Record {
     @Column(name = "record_id")
     @Id()
@@ -18,13 +18,19 @@ public class Record {
     private UUID id;
     private String content;
 
+    public Record() {
+        // JPA default constructor
+    }
+
     public Record(UUID id, String content) {
         this.id = id;
         this.content = content;
     }
 
-    public Record() {
-        // JPA default constructor
+    @Override
+    public String toString() {
+        return "Record [id=" + id + ", content=" + content + "]";
     }
+
 
 }

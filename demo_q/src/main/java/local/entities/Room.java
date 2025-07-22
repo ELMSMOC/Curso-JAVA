@@ -12,19 +12,18 @@ import jakarta.persistence.Table;
 public class Room {
     @Column(name = "room_id")
     @Id()
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
     private int capacity;
+
+    public Room() {
+        // JPA default constructor
+    }
 
     public Room(String id, String name, int capacity) {
         this.id = id;
         this.name = name;
         this.capacity = capacity;
-    }
-
-    public Room() {
-        // JPA default constructor
     }
 
     @Override

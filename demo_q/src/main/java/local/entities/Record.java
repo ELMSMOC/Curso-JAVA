@@ -14,16 +14,16 @@ import jakarta.persistence.Table;
 public class Record {
     @Column(name = "record_id")
     @Id
-    @GeneratedValue(strategy =  GenerationType.UUID)
-    private UUID id;
-    private String content;
-
-    public Record() {
-        // JPA default constructor
-    }
+    @GeneratedValue(strategy = GenerationType.UUID)
+    UUID id;
+    String content;
 
     public Record(String content) {
         this.content = content;
+    }
+
+    public Record() {
+        // JPA default constructor
     }
 
     @Override

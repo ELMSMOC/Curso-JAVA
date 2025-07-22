@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "rooms")
+@Table(name="rooms")
 public class Room {
     @Column(name = "room_id")
     @Id
@@ -17,7 +17,7 @@ public class Room {
     private int capacity;
 
     public Room() {
-        // JPA default constructor
+       // JPA default constructor
     }
 
     public Room(String id, String name, int capacity) {
@@ -30,6 +30,4 @@ public class Room {
     public String toString() {
         return "Room [id=" + id + ", name=" + name + ", capacity=" + capacity + "]";
     }
-
-
 }

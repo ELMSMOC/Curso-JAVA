@@ -7,49 +7,61 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import local.connections.EntityManagerProvider;
 
-public class AbstractDAO<E> implements DAO<E> {
+public abstract class AbstractDAO<E> implements DAO<E> {
 
     EntityManager entityManager;
     Class<E> entityClass;
 
-    public AbstractDAO() {
-        entityManager = EntityManagerProvider.getEntityManager();
-    }
-
     public AbstractDAO(Class<E> entityClass) {
         entityManager = EntityManagerProvider.getEntityManager();
-        this entityClass = entityClass;
+        this.entityClass = entityClass;
+    }
+
+    public AbstractDAO(
+            Class<E> entityClass,
+            EntityManager entityManager) {
+        this.entityManager = entityManager;
+        this.entityClass = entityClass;
     }
 
     @Override
     public List<E> findAll() {
-        String finalSQL = "FROM " + entityClass.getCanonicalName();
+        String finalSQL = " FROM " + entityClass.getCanonicalName();
         // Query q = entityManager.createQuery(finalSQL, entityClass);
         return entityManager
-            .createQuery(finalSQL, entityManager)
-
+                .createQuery(finalSQL, entityClass)
+                .getResultList();
     }
 
     @Override
     public <ID> Optional<E> findById(ID id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        // String finalSQL = " FROM " + entityClass.getCanonicalName()
+        // + " WHERE id = " + id;
+        return Optional.ofNullable(entityManager.find(entityClass, id));
+
     }
 
     @Override
     public E save(E entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        entityManager.getTransaction().begin();
+        entityManager.persist(entity);
+        entityManager.getTransaction().commit();
+        return entity;
     }
 
     @Override
     public void update(E entity) {
-        entityManager.merge(entity)
+        entityManager.getTransaction().begin();
+        entityManager.merge(entity);
+        entityManager.getTransaction().commit();
+
     }
 
     @Override
     public void delete(E entity) {
+        entityManager.getTransaction().begin();
         entityManager.remove(entity);
+        entityManager.getTransaction().commit();
     }
 
 }

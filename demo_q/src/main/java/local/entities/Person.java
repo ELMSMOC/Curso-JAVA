@@ -18,6 +18,10 @@ public class Person {
     private String surname;
     private String email;
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public Person(){
         // JPA default constructor
     }

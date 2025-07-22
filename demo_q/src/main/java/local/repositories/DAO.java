@@ -7,12 +7,12 @@ public interface DAO<E> {
 
     List<E> findAll();
 
-    <ID> Optional<E>findById(ID id);
+    <ID> Optional<E> findById(ID id);
 
     E save(E entity);
 
-    E update(E entity);
+    void update(E entity);
 
-    E delete(E entity);
+    void delete(E entity);
 
 }

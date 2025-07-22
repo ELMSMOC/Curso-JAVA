@@ -33,5 +33,12 @@ public class Meeting {
         return "Meeting [id=" + id + ", description=" + description + ", date=" + date + "]";
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
 }

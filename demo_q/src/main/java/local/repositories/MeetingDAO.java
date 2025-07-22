@@ -6,6 +6,6 @@ public class MeetingDAO extends DAO<Meeting>{
 
 
     MeetingDAO(){
-        super(Meeting.class)
+        super(Meeting.class);
     }
 }

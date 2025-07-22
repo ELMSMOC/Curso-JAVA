@@ -36,7 +36,6 @@ public class EntityManagerProvider {
 
     public static void main(String[] args) {
         getEntityManager();
-
     }
 
 }

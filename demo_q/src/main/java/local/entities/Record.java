@@ -26,6 +26,11 @@ public class Record {
         // JPA default constructor
     }
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+
     @Override
     public String toString() {
         return "Record [id=" + id + ", content=" + content + "]";

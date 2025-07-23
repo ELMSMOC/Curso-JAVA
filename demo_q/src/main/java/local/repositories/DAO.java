@@ -14,5 +14,5 @@ public interface DAO<E> {
     void update(E entity);
 
     void delete(E entity);
-
+    // <ID> void deleteById(ID id);
 }

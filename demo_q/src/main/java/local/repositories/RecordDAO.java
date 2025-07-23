@@ -4,7 +4,7 @@ import local.entities.Record;
 
 public class RecordDAO extends AbstractDAO<Record> {
 
-    public RecordDAO(Class<Record> entityClass) {
+    public RecordDAO() {
         super(Record.class);
     }
 

@@ -10,4 +10,5 @@ public interface ILibrary {
     String getScan();
     void loadRecords();
     void addBook (Book book);
+    Book chooseBook(Set<Book> setList);
 }

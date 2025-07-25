@@ -21,7 +21,7 @@ public class App {
         
         lb.printSetBook();
         Set<Book> sb = lb.getBookSet();
-        System.out.println(sb.toString());
+        // System.out.println(sb.toString());
         
         
 

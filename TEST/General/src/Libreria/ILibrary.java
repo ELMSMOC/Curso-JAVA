@@ -1,8 +1,11 @@
 package Libreria;
 
+import java.util.List;
+import java.util.Set;
+
 public interface ILibrary {
-    addBook(Book book);
-    findBook(String word);
-    shareBook(String word);
-    returnBook(Book book);
+    void shareBook(String word);
+    void returnBook(Book book);
+    Set<Book> getBookList();
+    String getScan();
 }

@@ -1,5 +1,8 @@
 package local.repositories;
 
+import java.util.List;
+
+import jakarta.persistence.TypedQuery;
 import local.entities.Room;
 
 public class RoomDAO extends AbstractDAO<Room> {

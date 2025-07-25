@@ -109,7 +109,6 @@ public class CalcView extends Calc {
 
         switch (option) {
             case 3:
-                // TODO comprobar posibles problemas del cast
                 showResult("factorial", ctr.calculateFactorial((byte) 1), number1);
                 break;
             case 4:

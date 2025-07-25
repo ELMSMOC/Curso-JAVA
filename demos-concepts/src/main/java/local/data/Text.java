@@ -2,7 +2,7 @@ package local.data;
 
 import java.util.Arrays;
 
-@SuppressWarnings("unused")
+
 public class Text {
 
     void useString() {

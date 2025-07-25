@@ -4,9 +4,19 @@ import local.entities.Room;
 import local.repositories.RoomDAO;
 
 public class AppRooms {
+    static RoomDAO dao = new RoomDAO();
 
+    private static void  showRooms() {
+        System.out.println("----------- Find All -----------");
+        System.out.println(dao.findAll());
+        // System.out.println("----------- Find by ID valid -----------");
+        // System.out.println(dao.findById(1));
+        // System.out.println("----------- Find by ID invalid -----------");
+        // System.out.println(dao.findById(100));
+        }
+
+    @SuppressWarnings("unused")
     private static void checkRooms() {
-        RoomDAO dao = new RoomDAO();
 
         System.out.println("----------- Delete by ID S0201 (si existe)-----------");
 

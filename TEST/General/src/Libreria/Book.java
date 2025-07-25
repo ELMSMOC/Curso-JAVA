@@ -6,7 +6,7 @@ public class Book {
     public String name;
     private String author;
     private int age;
-    private boolean isShared;
+    public boolean isShared;
     private int numBooks;
     private int index;
 

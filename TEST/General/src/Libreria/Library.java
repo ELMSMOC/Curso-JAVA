@@ -12,9 +12,9 @@ public class Library implements ILibrary {
     static List<Book> bookList = new ArrayList<Book>();
     static Set<Book> bookSet = new HashSet<>();
 
-    public String getScan() {
+    public String getScan(String message) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Escriba un titulo que quiera leer");
+        System.out.println(message);
         String title = sc.nextLine();
         return title;
     }
@@ -31,17 +31,35 @@ public class Library implements ILibrary {
 
     }
 
+    public Book chooseBook(Set<Book> setList) {
+        for (Book book : setList) {
+            System.out.println(book.toString());
+        }
+        String title = getScan("Escribe un titulo mas especifico entre estos");
+        Set<Book> sb = compareInput(title);
+        
+        if (sb.size() == 1) {
+            Book book = sb.iterator().next();
+            System.out.println(book.toString());
+            return book;
+        }
+        return null;
+    }
+
     public Set<Book> getBookSet() {
         Set<Book> resultSet = new HashSet<>();
         boolean isFinded = false;
 
         do {
-            String word = getScan();
+            String word = getScan("Escriba un titulo que quiera leer");
             resultSet = compareInput(word);
 
             if (resultSet.isEmpty()) {
                 System.err.println("No hay elementos parecidos, intentalo de nuevo.");
-            } else {
+                printSetBook();
+            } else if (resultSet.size() == 1) {
+                Book book = resultSet.iterator().next();
+                System.out.println("Perfecto nos quedamos con \n %s".formatted(book));
                 isFinded = true;
             }
 
@@ -67,9 +85,8 @@ public class Library implements ILibrary {
     }
 
     @Override
-    public void shareBook(String word) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'shareBook'");
+    public void shareBook(Book book) {
+        book.setShared(true);
     }
 
     @Override
@@ -77,11 +94,6 @@ public class Library implements ILibrary {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'returnBook'");
     }
-
-    // @Override
-    // public Book chooseBook(Set<Book> setList) {
-    // System.out.println(setList.toString());
-    // }
 
     @Override
     public void addBook(Book book) {
@@ -106,10 +118,5 @@ public class Library implements ILibrary {
 
     }
 
-    @Override
-    public Book chooseBook(Set<Book> setList) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'chooseBook'");
-    }
 
 }

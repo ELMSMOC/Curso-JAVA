@@ -21,6 +21,12 @@ public class App {
         
         lb.printSetBook();
         Set<Book> sb = lb.getBookSet();
+        Book b1 = lb.chooseBook(sb);
+        if (sb.size() != 1){
+           b1 =  lb.chooseBook(sb);
+        }
+
+        b1.setShared(true);
         // System.out.println(sb.toString());
         
         

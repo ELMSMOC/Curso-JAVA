@@ -29,10 +29,12 @@ public class Book {
     public String toString() {
         String message = 
         """
+        ========================
         Book Name: %s
         Author4: %s 
         Age: %s
         Es: %s 
+        
          """.formatted(name, author, age, isShared);
         return  message;
     }
